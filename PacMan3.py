@@ -2,9 +2,8 @@
 # Introdução a Programação (2023/2)
 # EP2 - PacMan
 # Integrante 1: Luiza Pauli de Castro
-# Integrante 2: Paulo José Campos Barbosa
-# Integrante 3: Poliana
-# Integrante 4: 
+# Integrante 2: 
+# Integrante 3: 
 ######################################################
 
 
