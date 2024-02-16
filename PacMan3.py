@@ -49,6 +49,29 @@ def desenhaMapa(parede, pilula):
             elif MAPA[l][c] == 2:
                 desenhaImagem(pilula, c*32, l*32)
 
+def carregaSprites(tamIcone):
+    """
+    Carrega os sprites do mapa e dos personagens
+    """
+    jogador_baixo = [carregaImagem("Recursos/Imagens/jogador_baixo1.png", (tamIcone, tamIcone)),
+                     carregaImagem("Recursos/Imagens/jogador_baixo2.png", (tamIcone, tamIcone)),
+                     carregaImagem("Recursos/Imagens/jogador_baixo3.png", (tamIcone, tamIcone))]
+    jogador_cima = [carregaImagem("Recursos/Imagens/jogador_cima1.png", (tamIcone, tamIcone)),
+                    carregaImagem("Recursos/Imagens/jogador_cima2.png", (tamIcone, tamIcone)),
+                    carregaImagem("Recursos/Imagens/jogador_cima3.png", (tamIcone, tamIcone))]
+    jogador_esquerda = [carregaImagem("Recursos/Imagens/jogador_esquerda1.png", (tamIcone, tamIcone)),
+                        carregaImagem("Recursos/Imagens/jogador_esquerda2.png", (tamIcone, tamIcone)),
+                        carregaImagem("Recursos/Imagens/jogador_esquerda3.png", (tamIcone, tamIcone))]
+    jogador_direita = [carregaImagem("Recursos/Imagens/jogador_direita1.png", (tamIcone, tamIcone)),
+                       carregaImagem("Recursos/Imagens/jogador_direita2.png", (tamIcone, tamIcone)),
+                       carregaImagem("Recursos/Imagens/jogador_direita3.png", (tamIcone, tamIcone))]
+    lista_imagem_jogador = [jogador_cima, jogador_baixo, jogador_esquerda, jogador_direita]
+
+    parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
+    pilula = carregaImagem("Recursos/Imagens/pilula.png", (tamIcone, tamIcone))
+
+    return lista_imagem_jogador, parede, pilula
+
 def defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador):
     """
     Define o conjunto de imagens do jogador a ser utilizado de acordo com a direção atual.
@@ -184,19 +207,20 @@ def main():
     criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
 
     tamIcone = 32
-    jogador_baixo = [carregaImagem("Recursos/Imagens/jogador_baixo1.png", (tamIcone, tamIcone)),
-                     carregaImagem("Recursos/Imagens/jogador_baixo2.png", (tamIcone, tamIcone)),
-                     carregaImagem("Recursos/Imagens/jogador_baixo3.png", (tamIcone, tamIcone))]
-    jogador_cima = [carregaImagem("Recursos/Imagens/jogador_cima1.png", (tamIcone, tamIcone)),
-                    carregaImagem("Recursos/Imagens/jogador_cima2.png", (tamIcone, tamIcone)),
-                    carregaImagem("Recursos/Imagens/jogador_cima3.png", (tamIcone, tamIcone))]
-    jogador_esquerda = [carregaImagem("Recursos/Imagens/jogador_esquerda1.png", (tamIcone, tamIcone)),
-                        carregaImagem("Recursos/Imagens/jogador_esquerda2.png", (tamIcone, tamIcone)),
-                        carregaImagem("Recursos/Imagens/jogador_esquerda3.png", (tamIcone, tamIcone))]
-    jogador_direita = [carregaImagem("Recursos/Imagens/jogador_direita1.png", (tamIcone, tamIcone)),
-                       carregaImagem("Recursos/Imagens/jogador_direita2.png", (tamIcone, tamIcone)),
-                       carregaImagem("Recursos/Imagens/jogador_direita3.png", (tamIcone, tamIcone))]
-    lista_imagem_jogador = [jogador_cima, jogador_baixo, jogador_esquerda, jogador_direita]
+    # jogador_baixo = [carregaImagem("Recursos/Imagens/jogador_baixo1.png", (tamIcone, tamIcone)),
+    #                  carregaImagem("Recursos/Imagens/jogador_baixo2.png", (tamIcone, tamIcone)),
+    #                  carregaImagem("Recursos/Imagens/jogador_baixo3.png", (tamIcone, tamIcone))]
+    # jogador_cima = [carregaImagem("Recursos/Imagens/jogador_cima1.png", (tamIcone, tamIcone)),
+    #                 carregaImagem("Recursos/Imagens/jogador_cima2.png", (tamIcone, tamIcone)),
+    #                 carregaImagem("Recursos/Imagens/jogador_cima3.png", (tamIcone, tamIcone))]
+    # jogador_esquerda = [carregaImagem("Recursos/Imagens/jogador_esquerda1.png", (tamIcone, tamIcone)),
+    #                     carregaImagem("Recursos/Imagens/jogador_esquerda2.png", (tamIcone, tamIcone)),
+    #                     carregaImagem("Recursos/Imagens/jogador_esquerda3.png", (tamIcone, tamIcone))]
+    # jogador_direita = [carregaImagem("Recursos/Imagens/jogador_direita1.png", (tamIcone, tamIcone)),
+    #                    carregaImagem("Recursos/Imagens/jogador_direita2.png", (tamIcone, tamIcone)),
+    #                    carregaImagem("Recursos/Imagens/jogador_direita3.png", (tamIcone, tamIcone))]
+    # lista_imagem_jogador = [jogador_cima, jogador_baixo, jogador_esquerda, jogador_direita]
+    lista_imagem_jogador, parede, pilula = carregaSprites(tamIcone)
     imagemJogador = lista_imagem_jogador[2]
     frameJogador = 0
     velocidadeAnimacaoJogador = 0.12
@@ -204,8 +228,8 @@ def main():
 
     xJogador = 400
     yJogador = 320
-    parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
-    pilula = carregaImagem("Recursos/Imagens/pilula.png", (tamIcone, tamIcone))
+    # parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
+    # pilula = carregaImagem("Recursos/Imagens/pilula.png", (tamIcone, tamIcone))
     
 
     while True:      
