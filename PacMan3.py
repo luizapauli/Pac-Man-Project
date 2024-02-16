@@ -87,21 +87,9 @@ def movimentoJogador(direcaoAtual, yJogador, xJogador):
 
     return yJogador, xJogador
 
-# def defineMovimentoJogador():
-
-
-def limitaParede(direcaoAtual, direcaoIntencao, yJogador, xJogador):
+def defineMovimentoJogador(direcaoAtual, direcaoIntencao, yJogador, xJogador):
     """
-    Função responsável por limitar os movimentos do Pacman de acordo com as paredes do mapa
-
-    Parâmetros:
-        direcao: Direção correspondente a tecla pressionada
-        yPacman: Posição Y do Pacman
-        xPacman: Posição X do Pacman 
-    Retorno:
-        direcao: Direção correspondente à limitação do mapa
-        yPacman: Posição Y do Pacman
-        xPacman: Posição X do Pacman
+    Define se o jogador pode mudar de direção ou não
     """
     # Representação das extremidades da imagem do personagem
     # A---B
@@ -151,6 +139,36 @@ def limitaParede(direcaoAtual, direcaoIntencao, yJogador, xJogador):
                 xJogador = 32*(c)
                 direcaoAtual = "STILL"
 
+    return direcaoAtual, yJogador, xJogador
+
+def limitaParede(direcaoAtual, yJogador, xJogador):
+    """
+    Função responsável por limitar os movimentos do Jogador de acordo com as paredes do mapa
+
+    Parâmetros:
+        direcaoAtual: Direção correspondente a tecla pressionada
+        yJogador: Posição Y do Jogador
+        xJogador: Posição X do Jogador
+    Retorno:
+        direcao: Direção correspondente à limitação do mapa
+        yJogador: Posição Y do Jogador
+        xJogador: Posição X do Jogador
+    """
+    c = xJogador//32
+    l = yJogador//32
+    if direcaoAtual == "UP" and MAPA[l][c] == 1:
+        yJogador = 32*(l+1)
+        direcaoAtual = "STILL"
+    if direcaoAtual == "LEFT" and MAPA[l][c] == 1:
+        xJogador = 32*(c+1)
+        direcaoAtual = "STILL"
+    if direcaoAtual == "DOWN" and MAPA[l+1][c] == 1:
+        yJogador = 32*l
+        direcaoAtual = "STILL"
+    if direcaoAtual == "RIGHT" and MAPA[l][c+1] == 1:
+        xJogador = 32*(c)
+        direcaoAtual = "STILL"
+        
     return direcaoAtual, yJogador, xJogador
 
 def portal (direcao, tamIcone, yJogador, xJogador):
@@ -210,9 +228,13 @@ def main():
 
         #Se a direção atual do jogador for igual a intenção, a função limitaParede fará 
         # direcaoAtual = "STILL", para parar o personagem quando bater em uma parede 
-        direcaoAtual, yJogador, xJogador = limitaParede(direcaoAtual, direcaoIntencao, yJogador, xJogador)
+        if direcaoAtual == direcaoIntencao:
+            direcaoAtual, yJogador, xJogador = limitaParede(direcaoAtual, yJogador, xJogador)
+
+        # Atualiza a imagem do jogador
         imagemJogador = defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador)
         yJogador, xJogador = movimentoJogador(direcaoAtual, yJogador, xJogador)
+        
         #Desenha o mapa
         desenhaMapa(parede, pilula)
 
