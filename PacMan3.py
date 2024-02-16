@@ -110,57 +110,42 @@ def movimentoJogador(direcaoAtual, yJogador, xJogador):
 
     return yJogador, xJogador
 
-def defineMovimentoJogador(direcaoAtual, direcaoIntencao, yJogador, xJogador):
+def verificaIntencao(direcaoAtual, direcaoIntencao, yJogador, xJogador):
     """
-    Define se o jogador pode mudar de direção ou não
+    Define se o jogador pode mudar de direção ou não naquele instante
     """
-    # Representação das extremidades da imagem do personagem
+    # Representação das extremidades da imagem do personagem:
     # A---B
     # |   |
     # C---D
+    # As extremidades são utilizadas para definir se a imagem completa do personagem poderá 
+    # passar pelo caminho, assim evitando bugs de movimetação
 
-    c = xJogador//32
-    l = yJogador//32
-    # Checa extremidades A e B respectivamente
+
+    # Representante no mapa da coordenada X de cada extremidade:
+    xA = xC = xJogador//32
+    xB = xD = (xJogador + 31)//32
+    # Representante no mapa da coordenada Y de cada extremidade:
+    yA = yB = yJogador//32
+    yC = yD = (yJogador +31)//32
+
+    # Checa extremidades A e B (o que muda é o Y)
     if direcaoIntencao == "UP":
-        # if MAPA[l][c] != 1 and MAPA[l][c+1] != 1:
-        if MAPA[l-1][c] != 1:
-            direcaoAtual = direcaoIntencao
-        else:
-            if direcaoAtual == direcaoIntencao:
-                yJogador = 32*(l+1)
-                direcaoAtual = "STILL"  
-    # Checa estremidades C e D respectivamente
+        if MAPA[yA-1][xA] != 1 and MAPA[yB-1][xB] != 1:
+            direcaoAtual = direcaoIntencao    
+    # Checa extremidades C e D (o que muda é o Y)
     elif direcaoIntencao== "DOWN":
-        # if MAPA[l+1][c] != 1 and MAPA[l+1][c+1] != 1:
-        if MAPA[l+1][c] != 1:
-            direcaoAtual = direcaoIntencao
-        else:
-            if direcaoAtual == direcaoIntencao:
-                yJogador = 32*l
-                direcaoAtual = "STILL"
-            # else:
-            #     direcaoAtual = direcaoAtual
-    # Checa estremidades A e C respectivamente         
+        if MAPA[yC+1][xC] != 1 and MAPA[yD+1][xD] != 1:
+            direcaoAtual = direcaoIntencao       
+    # Checa extremidades A e C (o que muda é o X)      
     elif direcaoIntencao == "LEFT":
-        # if MAPA[l][c-1] != 1 and MAPA[l+1][c] != 1:
-        if MAPA[l][c-1] != 1:
+        if MAPA[yA][xA-1] != 1 and MAPA[yC][xC-1] != 1:
             direcaoAtual = direcaoIntencao
-        else:
-            if direcaoAtual == direcaoIntencao:
-                xJogador = 32*(c+1)
-                direcaoAtual = "STILL"
-            else:
-                direcaoAtual = direcaoAtual
-    # Checa estremidades B e D respectivamente
+    # Checa extremidades B e D (o que muda é o X) 
     elif direcaoIntencao == "RIGHT":
-        if MAPA[l][c+1] != 1:
-        # if MAPA[l][c+1] != 1 and MAPA[l+1][c+1] != 1:
+        if MAPA[yB][xB+1] != 1 and MAPA[yD][xD+1] != 1:
             direcaoAtual = direcaoIntencao
-        else:
-            if direcaoAtual == direcaoIntencao:
-                xJogador = 32*(c)
-                direcaoAtual = "STILL"
+        
 
     return direcaoAtual, yJogador, xJogador
 
@@ -207,19 +192,6 @@ def main():
     criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
 
     tamIcone = 32
-    # jogador_baixo = [carregaImagem("Recursos/Imagens/jogador_baixo1.png", (tamIcone, tamIcone)),
-    #                  carregaImagem("Recursos/Imagens/jogador_baixo2.png", (tamIcone, tamIcone)),
-    #                  carregaImagem("Recursos/Imagens/jogador_baixo3.png", (tamIcone, tamIcone))]
-    # jogador_cima = [carregaImagem("Recursos/Imagens/jogador_cima1.png", (tamIcone, tamIcone)),
-    #                 carregaImagem("Recursos/Imagens/jogador_cima2.png", (tamIcone, tamIcone)),
-    #                 carregaImagem("Recursos/Imagens/jogador_cima3.png", (tamIcone, tamIcone))]
-    # jogador_esquerda = [carregaImagem("Recursos/Imagens/jogador_esquerda1.png", (tamIcone, tamIcone)),
-    #                     carregaImagem("Recursos/Imagens/jogador_esquerda2.png", (tamIcone, tamIcone)),
-    #                     carregaImagem("Recursos/Imagens/jogador_esquerda3.png", (tamIcone, tamIcone))]
-    # jogador_direita = [carregaImagem("Recursos/Imagens/jogador_direita1.png", (tamIcone, tamIcone)),
-    #                    carregaImagem("Recursos/Imagens/jogador_direita2.png", (tamIcone, tamIcone)),
-    #                    carregaImagem("Recursos/Imagens/jogador_direita3.png", (tamIcone, tamIcone))]
-    # lista_imagem_jogador = [jogador_cima, jogador_baixo, jogador_esquerda, jogador_direita]
     lista_imagem_jogador, parede, pilula = carregaSprites(tamIcone)
     imagemJogador = lista_imagem_jogador[2]
     frameJogador = 0
@@ -228,9 +200,6 @@ def main():
 
     xJogador = 400
     yJogador = 320
-    # parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
-    # pilula = carregaImagem("Recursos/Imagens/pilula.png", (tamIcone, tamIcone))
-    
 
     while True:      
         if teclaPressionada(K_ESCAPE):
@@ -249,16 +218,20 @@ def main():
             direcaoIntencao = "LEFT"
         elif teclaPressionada(K_RIGHT):
             direcaoIntencao = "RIGHT"
+            
+        # Verifica a intenção de movimento
+        direcaoAtual, yJogador, xJogador = verificaIntencao(direcaoAtual, direcaoIntencao, yJogador, xJogador)
+        # Atualiza a imagem do jogador
+        imagemJogador = defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador)
+        # Atualiza a posição do jogador
+        yJogador, xJogador = movimentoJogador(direcaoAtual, yJogador, xJogador)
 
         #Se a direção atual do jogador for igual a intenção, a função limitaParede fará 
         # direcaoAtual = "STILL", para parar o personagem quando bater em uma parede 
         if direcaoAtual == direcaoIntencao:
             direcaoAtual, yJogador, xJogador = limitaParede(direcaoAtual, yJogador, xJogador)
 
-        # Atualiza a imagem do jogador
-        imagemJogador = defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador)
-        yJogador, xJogador = movimentoJogador(direcaoAtual, yJogador, xJogador)
-        
+
         #Desenha o mapa
         desenhaMapa(parede, pilula)
 
