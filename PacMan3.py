@@ -49,6 +49,22 @@ def desenhaMapa(parede, pilula):
             elif MAPA[l][c] == 2:
                 desenhaImagem(pilula, c*32, l*32)
 
+def defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador):
+    """
+    Define o conjunto de imagens do jogador a ser utilizado de acordo com a direção atual.
+    """
+    if direcaoAtual == "UP":
+        imagemJogador = lista_imagem_jogador[0]
+    elif direcaoAtual == "DOWN":
+        imagemJogador = lista_imagem_jogador[1]
+    elif direcaoAtual == "LEFT":
+        imagemJogador = lista_imagem_jogador[2]
+    elif direcaoAtual == "RIGHT":
+        imagemJogador = lista_imagem_jogador[3]
+    else:
+        imagemJogador = imagemJogador
+    return imagemJogador
+
 def movimentoJogador(direcaoAtual, yJogador, xJogador):
     """
     Função responsável por controlar a movimentação do Jogador.
@@ -71,7 +87,10 @@ def movimentoJogador(direcaoAtual, yJogador, xJogador):
 
     return yJogador, xJogador
 
-def limitaParede(direcaoAtual, direcaoIntencao, yJogador, xJogador, lista_imagem_jogador):
+# def defineMovimentoJogador():
+
+
+def limitaParede(direcaoAtual, direcaoIntencao, yJogador, xJogador):
     """
     Função responsável por limitar os movimentos do Pacman de acordo com as paredes do mapa
 
@@ -91,9 +110,10 @@ def limitaParede(direcaoAtual, direcaoIntencao, yJogador, xJogador, lista_imagem
 
     c = xJogador//32
     l = yJogador//32
-    # Checa estremidades A e B respectivamente
+    # Checa extremidades A e B respectivamente
     if direcaoIntencao == "UP":
-        if MAPA[l][c] != 1 and MAPA[l][c+1] != 1:
+        # if MAPA[l][c] != 1 and MAPA[l][c+1] != 1:
+        if MAPA[l-1][c] != 1:
             direcaoAtual = direcaoIntencao
         else:
             if direcaoAtual == direcaoIntencao:
@@ -101,23 +121,30 @@ def limitaParede(direcaoAtual, direcaoIntencao, yJogador, xJogador, lista_imagem
                 direcaoAtual = "STILL"  
     # Checa estremidades C e D respectivamente
     elif direcaoIntencao== "DOWN":
-        if MAPA[l+1][c] != 1 and MAPA[l+1][c+1] != 1:
+        # if MAPA[l+1][c] != 1 and MAPA[l+1][c+1] != 1:
+        if MAPA[l+1][c] != 1:
             direcaoAtual = direcaoIntencao
         else:
             if direcaoAtual == direcaoIntencao:
                 yJogador = 32*l
                 direcaoAtual = "STILL"
-    # Checa estremidades B e C respectivamente         
+            # else:
+            #     direcaoAtual = direcaoAtual
+    # Checa estremidades A e C respectivamente         
     elif direcaoIntencao == "LEFT":
-        if MAPA[l][c+1] != 1 and MAPA[l+1][c] != 1:
+        # if MAPA[l][c-1] != 1 and MAPA[l+1][c] != 1:
+        if MAPA[l][c-1] != 1:
             direcaoAtual = direcaoIntencao
         else:
             if direcaoAtual == direcaoIntencao:
                 xJogador = 32*(c+1)
                 direcaoAtual = "STILL"
-    # Checa estremidades A e C respectivamente
+            else:
+                direcaoAtual = direcaoAtual
+    # Checa estremidades B e D respectivamente
     elif direcaoIntencao == "RIGHT":
-        if MAPA[l][c] != 1 and MAPA[l+1][c] != 1:
+        if MAPA[l][c+1] != 1:
+        # if MAPA[l][c+1] != 1 and MAPA[l+1][c+1] != 1:
             direcaoAtual = direcaoIntencao
         else:
             if direcaoAtual == direcaoIntencao:
@@ -152,7 +179,7 @@ def main():
                        carregaImagem("Recursos/Imagens/jogador_direita2.png", (tamIcone, tamIcone)),
                        carregaImagem("Recursos/Imagens/jogador_direita3.png", (tamIcone, tamIcone))]
     lista_imagem_jogador = [jogador_cima, jogador_baixo, jogador_esquerda, jogador_direita]
-    imagemJogador = jogador_esquerda
+    imagemJogador = lista_imagem_jogador[2]
     frameJogador = 0
     velocidadeAnimacaoJogador = 0.12
     direcaoAtual = direcaoIntencao= "STILL"
@@ -184,6 +211,7 @@ def main():
         #Se a direção atual do jogador for igual a intenção, a função limitaParede fará 
         # direcaoAtual = "STILL", para parar o personagem quando bater em uma parede 
         direcaoAtual, yJogador, xJogador = limitaParede(direcaoAtual, direcaoIntencao, yJogador, xJogador)
+        imagemJogador = defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador)
         yJogador, xJogador = movimentoJogador(direcaoAtual, yJogador, xJogador)
         #Desenha o mapa
         desenhaMapa(parede, pilula)
