@@ -17,8 +17,30 @@ CORFUNDOJANELA = (222, 212, 161)
 LARGURAJANELA = 800
 ALTURAJANELA = 640
 ICONE = "Recursos/Imagens/icone.png"
-
 MAPA = [
+[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],   
+[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
+[1,2,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,1],
+[1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,1],
+[1,2,1,1,1,2,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,1],
+[1,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,1],
+[1,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,1],
+[1,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,1],
+[1,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,1],
+[2,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,2],
+[1,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1],
+[1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,2,1],
+[1,1,1,2,1,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,1],
+[1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1,1,2,2,2,1],
+[1,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,1],
+[1,2,2,2,1,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,2,1],
+[1,2,1,2,1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,1,2,2,2,2,1],
+[1,2,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,2,1],
+[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
+[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+]
+
+MAPA_AUX = [
 [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],   
 [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
 [1,2,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,1],
@@ -199,11 +221,33 @@ def coletaPilula (direcaoAtual, xJogador, yJogador):
     x = xJogador//32 #Up and Down
     yUp = (yJogador + 16)//32
     yDown = (yJogador - 16)//32
+
     MAPA[yUp][x] = 0 if direcaoAtual == "UP" and MAPA[yUp][x] == 2 else MAPA[yUp][x]
     MAPA[y][xLeft] = 0 if direcaoAtual == "LEFT" and MAPA[y][xLeft] == 2 else MAPA[y][xLeft]
     MAPA[yDown+1][x] = 0 if direcaoAtual == "DOWN" and MAPA[yDown+1][x] == 2 else MAPA[yDown+1][x]
     MAPA[y][xRight+1] = 0 if direcaoAtual == "RIGHT" and MAPA[y][xRight+1] == 2 else MAPA[y][xRight+1]
 
+
+def contaPilula():
+    """
+    Função responsável por contar as pílulas coletadas
+    """
+    pilulasRestantes = 0
+    pilulasTotais = 0
+
+    for l in range(len(MAPA)):
+        for c in range(len(MAPA[l])):
+            if MAPA[l][c] == 2:
+                pilulasRestantes += 1
+
+    for l in range(len(MAPA_AUX)):
+        for c in range(len(MAPA_AUX[l])):
+            if MAPA_AUX[l][c] == 2:
+                pilulasTotais += 1
+    
+    pilulasColetadas = pilulasTotais - pilulasRestantes
+                
+    return pilulasColetadas
 
 def main():
     criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
@@ -217,6 +261,7 @@ def main():
 
     xJogador = 400
     yJogador = 320
+
 
     while True:      
         if teclaPressionada(K_ESCAPE):
@@ -247,6 +292,8 @@ def main():
 
         # Atualiza o mapa ao coletar as pílulas
         coletaPilula (direcaoAtual, xJogador, yJogador)
+        pilulasColetadas = contaPilula()
+        print(pilulasColetadas)
         
         # Se a direção atual do jogador for igual a intenção, a função limitaParede()
         # irá parar o personagem quando bater em uma parede 
