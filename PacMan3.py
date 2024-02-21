@@ -15,7 +15,7 @@ import math as m
 
 CORFUNDOJANELA = (222, 212, 161)
 LARGURAJANELA = 800
-ALTURAJANELA = 640
+ALTURAJANELA = 680
 ICONE = "Recursos/Imagens/icone.png"
 MAPA = [
 [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],   
@@ -93,6 +93,17 @@ def carregaSprites(tamIcone):
     pilula = carregaImagem("Recursos/Imagens/pilula.png", (tamIcone, tamIcone))
 
     return lista_imagem_jogador, parede, pilula
+
+def telaPontuacao(pilulasColetadas: int):
+    """
+    Função responsável por desenhar e atualizar a tela de pontuação.
+
+    Parâmetro:
+        pilulasColetadas: Quantidade de pílulas coletadas
+    """
+    pontuacao = carregaImagem("Recursos/Imagens/pontuacao3.png")
+    desenhaImagem(pontuacao, 0, 640)
+    desenhaTexto(str(pilulasColetadas), 180, 658, 35, "firebrick4") #coral4
 
 def defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador):
     """
@@ -227,7 +238,6 @@ def coletaPilula (direcaoAtual, xJogador, yJogador):
     MAPA[yDown+1][x] = 0 if direcaoAtual == "DOWN" and MAPA[yDown+1][x] == 2 else MAPA[yDown+1][x]
     MAPA[y][xRight+1] = 0 if direcaoAtual == "RIGHT" and MAPA[y][xRight+1] == 2 else MAPA[y][xRight+1]
 
-
 def contaPilula():
     """
     Função responsável por contar as pílulas coletadas
@@ -303,6 +313,8 @@ def main():
 
         #Desenha o mapa
         desenhaMapa(parede, pilula)
+
+        telaPontuacao(pilulasColetadas)
 
         # Desenha o jogador
         if direcaoAtual != "STILL":
