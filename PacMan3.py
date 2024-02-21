@@ -71,9 +71,12 @@ def desenhaMapa(parede, pilula):
             elif MAPA[l][c] == 2:
                 desenhaImagem(pilula, c*32, l*32)
 
-def carregaSprites(tamIcone):
+def carregaSprites(tamIcone: int):
     """
     Carrega os sprites do mapa e dos personagens
+
+    Parâmetro:
+        tamIcone: Tamanho padrão dos ícones
     """
     jogador_baixo = [carregaImagem("Recursos/Imagens/jogador_baixo1.png", (tamIcone, tamIcone)),
                      carregaImagem("Recursos/Imagens/jogador_baixo2.png", (tamIcone, tamIcone)),
@@ -105,9 +108,16 @@ def telaPontuacao(pilulasColetadas: int):
     desenhaImagem(pontuacao, 0, 640)
     desenhaTexto(str(pilulasColetadas), 180, 658, 35, "firebrick4") #coral4
 
-def defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador):
+def defineImagemJogador(direcaoAtual: str, imagemJogador: int, lista_imagem_jogador: list):
     """
     Define o conjunto de imagens do jogador a ser utilizado de acordo com a direção atual.
+    
+    Parâmetros:
+        direcaoAtual: Direção atual do jogador;
+        imagemJogador: Índice correspondente à imagem atual do jogador;
+        lista_imagem_jogador: Lista de imagens do jogador.
+    Retorno:
+        imagemJogador: Índice correspondente à imagem atual do jogador.
     """
     if direcaoAtual == "UP":
         imagemJogador = lista_imagem_jogador[0]
@@ -121,14 +131,17 @@ def defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador):
         imagemJogador = imagemJogador
     return imagemJogador
 
-def movimentoJogador(direcaoAtual, yJogador, xJogador):
+def movimentoJogador(direcaoAtual: str, yJogador: int, xJogador: int):
     """
     Função responsável por controlar a movimentação do Jogador.
 
     Parâmetros:
-        direcao: Direção correspondente a tecla pressionada
-        yJogador: Posição Y do Jogador
-        xJogador: Posição X do Jogador
+        direcaoAtual: Direção atual do jogador;
+        yJogador: Posição Y do Jogador;
+        xJogador: Posição X do Jogador.
+    Retorno:
+        yJogador: Posição Y do Jogador atualizada;
+        xJogador: Posição X do Jogador atualizada.
     """
     if direcaoAtual == "UP":
         yJogador -= 2
@@ -143,9 +156,20 @@ def movimentoJogador(direcaoAtual, yJogador, xJogador):
 
     return yJogador, xJogador
 
-def verificaIntencao(direcaoAtual, direcaoIntencao, yJogador, xJogador):
+def verificaIntencao(direcaoAtual: str, direcaoIntencao: str, yJogador: int, xJogador: int):
     """
-    Define se o jogador pode mudar de direção ou não naquele instante
+    Controla a mudança entre a intenção de direção e a direção atual.
+    Se o caminho estiver livre, a mudança ocorre. (Não é cumulativa)
+
+    Parâmetros:
+        direcaoAtual: Direção atual do jogador;
+        direcaoIntencao: Intenção de mudança de direção;
+        yJogador: Posição Y do Jogador;
+        xJogador: Posição X do Jogador;
+    Retorno:
+        direcaoAtual: Direção atualizada do jogador;
+        yJogador: Posição Y do Jogador atualizada;
+        xJogador: Posição X do Jogador atualizada.
     """
     # Representação das extremidades da imagem do personagem:
     # A---B
@@ -154,13 +178,12 @@ def verificaIntencao(direcaoAtual, direcaoIntencao, yJogador, xJogador):
     # As extremidades são utilizadas para definir se a imagem completa do personagem poderá 
     # passar pelo caminho, assim evitando bugs de movimetação
 
-
     # Representante no mapa da coordenada X de cada extremidade:
     xA = xC = xJogador//32
     xB = xD = (xJogador + 31)//32
     # Representante no mapa da coordenada Y de cada extremidade:
     yA = yB = yJogador//32
-    yC = yD = (yJogador +31)//32
+    yC = yD = (yJogador + 31)//32
 
     # Checa extremidades A e B (o que muda é o Y)
     if direcaoIntencao == "UP":
@@ -182,18 +205,18 @@ def verificaIntencao(direcaoAtual, direcaoIntencao, yJogador, xJogador):
 
     return direcaoAtual, yJogador, xJogador
 
-def limitaParede(direcaoAtual, yJogador, xJogador):
+def limitaParede(direcaoAtual: str, yJogador: int, xJogador: int):
     """
-    Função responsável por limitar os movimentos do Jogador de acordo com as paredes do mapa
+    Função responsável por limitar os movimentos do Jogador de acordo com as paredes do mapa.
 
     Parâmetros:
-        direcaoAtual: Direção correspondente a tecla pressionada
-        yJogador: Posição Y do Jogador
-        xJogador: Posição X do Jogador
+        direcaoAtual: Direção atual do jogador;
+        yJogador: Posição Y do Jogador;
+        xJogador: Posição X do Jogador.
     Retorno:
-        direcao: Direção correspondente à limitação do mapa
-        yJogador: Posição Y do Jogador
-        xJogador: Posição X do Jogador
+        direcaoAtual: Estado de movimento correspondente à limitação do mapa;
+        yJogador: Posição Y do Jogador atualizada;
+        xJogador: Posição X do Jogador atualizada.
     """
     c = xJogador//32
     l = yJogador//32
@@ -212,6 +235,7 @@ def limitaParede(direcaoAtual, yJogador, xJogador):
         
     return direcaoAtual, yJogador, xJogador
 
+# FUNÇÃO SEM USO -> a ser atualizada
 def portal (direcao, tamIcone, yJogador, xJogador):
     if direcao == "LEFT":
         if yJogador == 9*32 and xJogador == 0:
@@ -223,7 +247,12 @@ def portal (direcao, tamIcone, yJogador, xJogador):
 
 def coletaPilula (direcaoAtual, xJogador, yJogador):
     """
-    Função responsável por coletar as pílulas do mapa.
+    Função responsável por coletar as pílulas do mapa (atualiza os valores do mapa).
+
+    Parâmetros:
+        direcaoAtual: Direção atual do jogador;
+        yJogador: Posição Y do Jogador;
+        xJogador: Posição X do Jogador.
     """
 
     xLeft = (xJogador + 16)//32
@@ -241,6 +270,9 @@ def coletaPilula (direcaoAtual, xJogador, yJogador):
 def contaPilula():
     """
     Função responsável por contar as pílulas coletadas
+
+    Retorno:
+        pilulasColetadas: Quantidade de pílulas coletadas até o momento
     """
     pilulasRestantes = 0
     pilulasTotais = 0
@@ -260,10 +292,12 @@ def contaPilula():
     return pilulasColetadas
 
 def main():
+    """
+    Função responsável por unir as outras funções.
+    """
     criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
 
-    tamIcone = 32
-    lista_imagem_jogador, parede, pilula = carregaSprites(tamIcone)
+    lista_imagem_jogador, parede, pilula = carregaSprites(32)
     imagemJogador = lista_imagem_jogador[2]
     frameJogador = 0
     velocidadeAnimacaoJogador = 0.12
