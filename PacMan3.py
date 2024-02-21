@@ -337,12 +337,9 @@ def main():
         # Atualiza o mapa ao coletar as pílulas
         coletaPilula (direcaoAtual, xJogador, yJogador)
         pilulasColetadas = contaPilula()
-        print(pilulasColetadas)
+        # print(pilulasColetadas)
         
-        # Se a direção atual do jogador for igual a intenção, a função limitaParede()
-        # irá parar o personagem quando bater em uma parede 
-        if direcaoAtual == direcaoIntencao:
-            direcaoAtual, yJogador, xJogador = limitaParede(direcaoAtual, yJogador, xJogador)
+        direcaoAtual, yJogador, xJogador = limitaParede(direcaoAtual, yJogador, xJogador)
 
 
         #Desenha o mapa
