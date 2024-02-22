@@ -18,58 +18,81 @@ LARGURAJANELA = 800
 ALTURAJANELA = 680
 ICONE = "Recursos/Imagens/icone.png"
 MAPA = [
-[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],   
-[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
-[1,2,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,1],
-[1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,1],
-[1,2,1,1,1,2,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,1],
-[1,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,1],
-[1,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,1],
-[1,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,1],
-[1,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,1],
-[2,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,2],
-[1,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1],
-[1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,2,1],
-[1,1,1,2,1,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,1],
-[1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1,1,2,2,2,1],
-[1,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,1],
-[1,2,2,2,1,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,2,1],
-[1,2,1,2,1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,1,2,2,2,2,1],
-[1,2,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,2,1],
-[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
-[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+[3,4,4,4,4,4,4,4,4,4,4,4,1,7,7,7,7,7,7,7,7,7,7,7,8],   
+[5,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,14],
+[6,2,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,14],
+[6,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
+[6,2,1,1,1,2,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
+[6,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,14],
+[6,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,14],
+[6,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,14],
+[6,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,14],
+[1,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,16],
+[11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,15],
+[11,2,2,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,2,15],
+[11,1,1,2,1,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
+[11,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1,1,2,2,2,15],
+[11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
+[11,2,2,2,1,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,2,15],
+[11,2,1,2,1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,1,2,2,2,2,15],
+[11,2,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,2,15],
+[11,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,15],
+[9,12,12,12,12,12,12,12,12,12,12,12,1,13,13,13,13,13,13,13,13,13,13,13,10]
 ]
 
 MAPA_AUX = [
-[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],   
-[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
-[1,2,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,1],
-[1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,1],
-[1,2,1,1,1,2,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,1],
-[1,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,1],
-[1,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,1],
-[1,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,1],
-[1,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,1],
-[2,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,2],
-[1,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1],
-[1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,2,1],
-[1,1,1,2,1,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,1],
-[1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1,1,2,2,2,1],
-[1,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,1],
-[1,2,2,2,1,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,2,1],
-[1,2,1,2,1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,1,2,2,2,2,1],
-[1,2,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,2,1],
-[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
-[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+[3,4,4,4,4,4,4,4,4,4,4,4,1,7,7,7,7,7,7,7,7,7,7,7,8],   
+[5,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,14],
+[6,2,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,14],
+[6,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
+[6,2,1,1,1,2,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
+[6,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,14],
+[6,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,14],
+[6,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,14],
+[6,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,14],
+[1,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,16],
+[11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,15],
+[11,2,2,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,2,15],
+[11,1,1,2,1,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
+[11,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1,1,2,2,2,15],
+[11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
+[11,2,2,2,1,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,2,15],
+[11,2,1,2,1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,1,2,2,2,2,15],
+[11,2,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,2,15],
+[11,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,15],
+[9,12,12,12,12,12,12,12,12,12,12,12,1,13,13,13,13,13,13,13,13,13,13,13,10]
 ]
 
-def desenhaMapa(parede, pilula):
+def desenhaMapa(lista_objetos):
+    
     for l in range(len(MAPA)):
         for c in range(len(MAPA[l])):
-            if MAPA[l][c] == 1:
-                desenhaImagem(parede, c*32, l*32)
-            elif MAPA[l][c] == 2:
-                desenhaImagem(pilula, c*32, l*32)
+            n = 1
+            while True:
+                if MAPA[l][c] == n:
+                    desenhaImagem(lista_objetos[n-1], c*32, l*32)
+                    break
+                else:
+                    n += 1
+
+    # nº no mapa: objeto -> índice em 'lista_objetos' = (nº no mapa) - 1
+    # 0: ----
+    # 1: parede
+    # 2: pilula
+    # 3: quina noroeste
+    # 4; parede norte
+    # 5: parede oeste 1
+    # 6: parede oeste 2
+    # 7: parede norte 2
+    # 8: quina nordeste
+    # 9: quinda sudoeste
+    # 10: quina sudeste
+    # 11: parede oeste 3
+    # 12: parede sul 1
+    # 13: parede sul 2
+    # 14: parede leste 1
+    # 15: parede leste 2
+    # 16: portal leste
 
 def carregaSprites(tamIcone: int):
     """
@@ -94,8 +117,23 @@ def carregaSprites(tamIcone: int):
 
     parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
     pilula = carregaImagem("Recursos/Imagens/pilula.png", (tamIcone, tamIcone))
-
-    return lista_imagem_jogador, parede, pilula
+    quina_noroeste = carregaImagem("Recursos/Imagens/quina_noroeste2.png", (tamIcone, tamIcone))
+    parede_norte1 = carregaImagem("Recursos/Imagens/parede_norte1.png", (tamIcone, tamIcone))
+    parede_oeste1 = carregaImagem("Recursos/Imagens/parede_oeste1.png", (tamIcone, tamIcone))
+    parede_oeste2 = carregaImagem("Recursos/Imagens/parede_oeste2.png", (tamIcone, tamIcone))
+    parede_norte2 = carregaImagem("Recursos/Imagens/parede_norte2.png", (tamIcone, tamIcone))
+    quina_nordeste = carregaImagem("Recursos/Imagens/quina_nordeste2.png", (tamIcone, tamIcone))
+    quina_sudoeste = carregaImagem("Recursos/Imagens/quina_sudoeste1.png", (tamIcone, tamIcone))
+    quina_sudeste = carregaImagem("Recursos/Imagens/quina_sudeste1.png", (tamIcone, tamIcone))
+    parede_oeste3 = carregaImagem("Recursos/Imagens/parede_oeste3.png", (tamIcone, tamIcone))
+    parede_sul1 = carregaImagem("Recursos/Imagens/parede_sul1.png", (tamIcone, tamIcone))
+    parede_sul2 = carregaImagem("Recursos/Imagens/parede_sul2.png", (tamIcone, tamIcone))
+    parede_leste1 = carregaImagem("Recursos/Imagens/parede_leste1.png", (tamIcone, tamIcone))
+    parede_leste2 = carregaImagem("Recursos/Imagens/parede_leste2.png", (tamIcone, tamIcone))
+    portal_leste = carregaImagem("Recursos/Imagens/portal_leste.png", (tamIcone, tamIcone))
+    lista_objetos = [parede, pilula, quina_noroeste, parede_norte1, parede_oeste1, parede_oeste2, parede_norte2, quina_nordeste, quina_sudoeste, quina_sudeste, parede_oeste3, parede_sul1, parede_sul2, parede_leste1, parede_leste2, portal_leste]
+    
+    return lista_imagem_jogador, lista_objetos
 
 def telaPontuacao(pilulasColetadas: int):
     """
@@ -187,19 +225,19 @@ def verificaIntencao(direcaoAtual: str, direcaoIntencao: str, yJogador: int, xJo
 
     # Checa extremidades A e B (o que muda é o Y)
     if direcaoIntencao == "UP":
-        if MAPA[yA-1][xA] != 1 and MAPA[yB-1][xB] != 1:
+        if (MAPA[yA-1][xA] == 0 or MAPA[yA-1][xA] == 2) and (MAPA[yB-1][xB] == 0 or MAPA[yB-1][xB] == 2):
             direcaoAtual = direcaoIntencao    
     # Checa extremidades C e D (o que muda é o Y)
     elif direcaoIntencao== "DOWN":
-        if MAPA[yC+1][xC] != 1 and MAPA[yD+1][xD] != 1:
+        if (MAPA[yC+1][xC] == 0 or MAPA[yC+1][xC] == 2) and (MAPA[yD+1][xD] == 0 or MAPA[yD+1][xD] == 2):
             direcaoAtual = direcaoIntencao       
     # Checa extremidades A e C (o que muda é o X)      
     elif direcaoIntencao == "LEFT":
-        if MAPA[yA][xA-1] != 1 and MAPA[yC][xC-1] != 1:
+        if (MAPA[yA][xA-1] == 0 or MAPA[yA][xA-1] == 2) and (MAPA[yC][xC-1] == 0 or MAPA[yC][xC-1] == 2):
             direcaoAtual = direcaoIntencao
     # Checa extremidades B e D (o que muda é o X) 
     elif direcaoIntencao == "RIGHT":
-        if MAPA[yB][xB+1] != 1 and MAPA[yD][xD+1] != 1:
+        if (MAPA[yB][xB+1] == 0 or MAPA[yB][xB+1] == 2) and (MAPA[yD][xD+1] == 0 or MAPA[yD][xD+1] == 2):
             direcaoAtual = direcaoIntencao
         
 
@@ -220,16 +258,16 @@ def limitaParede(direcaoAtual: str, yJogador: int, xJogador: int):
     """
     c = xJogador//32
     l = yJogador//32
-    if direcaoAtual == "UP" and MAPA[l][c] == 1:
+    if direcaoAtual == "UP" and (MAPA[l][c] != 0 and MAPA[l][c] != 2):
         yJogador = 32*(l+1)
         direcaoAtual = "STILL"
-    if direcaoAtual == "LEFT" and MAPA[l][c] == 1:
+    if direcaoAtual == "LEFT" and (MAPA[l][c] != 0 and MAPA[l][c] != 2):
         xJogador = 32*(c+1)
         direcaoAtual = "STILL"
-    if direcaoAtual == "DOWN" and MAPA[l+1][c] == 1:
+    if direcaoAtual == "DOWN" and (MAPA[l+1][c] != 0 and MAPA[l+1][c] != 2):
         yJogador = 32*l
         direcaoAtual = "STILL"
-    if direcaoAtual == "RIGHT" and MAPA[l][c+1] == 1:
+    if direcaoAtual == "RIGHT" and (MAPA[l][c+1] != 0 and MAPA[l][c+1] != 2):
         xJogador = 32*(c)
         direcaoAtual = "STILL"
         
@@ -297,7 +335,7 @@ def main():
     """
     criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
 
-    lista_imagem_jogador, parede, pilula = carregaSprites(32)
+    lista_imagem_jogador, lista_objetos = carregaSprites(32)
     imagemJogador = lista_imagem_jogador[2]
     frameJogador = 0
     velocidadeAnimacaoJogador = 0.12
@@ -343,7 +381,7 @@ def main():
 
 
         #Desenha o mapa
-        desenhaMapa(parede, pilula)
+        desenhaMapa(lista_objetos)
 
         telaPontuacao(pilulasColetadas)
 
