@@ -18,39 +18,39 @@ LARGURAJANELA = 800
 ALTURAJANELA = 680
 ICONE = "Recursos/Imagens/icone.png"
 MAPA = [
-[3,4,4,4,4,4,4,4,4,4,4,4,1,7,7,7,7,7,7,7,7,7,7,7,8],   
-[5,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,14],
-[6,2,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,14],
+[3,4,4,4,4,4,4,4,4,4,4,4,19,7,7,7,7,7,7,7,7,7,7,7,8],   
+[5,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,1,2,2,2,2,2,14],
+[6,2,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,2,1,2,1,1,1,2,14],
 [6,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
-[6,2,1,1,1,2,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
+[6,1,1,1,2,1,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
 [6,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,14],
 [6,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,14],
 [6,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,14],
 [6,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,14],
-[1,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,16],
+[17,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,16],
 [11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,15],
 [11,2,2,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,2,15],
 [11,1,1,2,1,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
 [11,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1,1,2,2,2,15],
 [11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
 [11,2,2,2,1,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,2,15],
-[11,2,1,2,1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,1,2,2,2,2,15],
-[11,2,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,2,15],
-[11,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,15],
-[9,12,12,12,12,12,12,12,12,12,12,12,1,13,13,13,13,13,13,13,13,13,13,13,10]
+[11,2,1,2,1,2,2,2,2,2,2,1,2,2,1,2,2,2,2,1,2,2,2,2,15],
+[11,2,1,2,1,2,1,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,15],
+[11,2,2,2,2,2,2,2,2,2,2,1,2,1,2,2,2,2,2,2,2,2,2,2,15],
+[9,12,12,12,12,12,12,12,12,12,12,12,18,13,13,13,13,13,13,13,13,13,13,13,10]
 ]
 
 MAPA_AUX = [
-[3,4,4,4,4,4,4,4,4,4,4,4,1,7,7,7,7,7,7,7,7,7,7,7,8],   
-[5,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,14],
-[6,2,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,14],
-[6,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
-[6,2,1,1,1,2,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
-[6,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,14],
+[3,4,4,4,4,4,4,4,4,4,4,4,19,7,7,7,7,7,7,7,7,7,7,7,8],   
+[5,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,14],
+[6,0,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,14],
+[6,0,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
+[6,0,1,1,1,2,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
+[6,0,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,14],
 [6,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,14],
 [6,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,14],
 [6,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,14],
-[1,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,16],
+[17,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,16],
 [11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,15],
 [11,2,2,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,2,15],
 [11,1,1,2,1,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
@@ -60,20 +60,60 @@ MAPA_AUX = [
 [11,2,1,2,1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,1,2,2,2,2,15],
 [11,2,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,2,15],
 [11,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,15],
-[9,12,12,12,12,12,12,12,12,12,12,12,1,13,13,13,13,13,13,13,13,13,13,13,10]
+[9,12,12,12,12,12,12,12,12,12,12,12,18,13,13,13,13,13,13,13,13,13,13,13,10]
 ]
 
 def desenhaMapa(lista_objetos):
     
     for l in range(len(MAPA)):
         for c in range(len(MAPA[l])):
-            n = 1
-            while True:
-                if MAPA[l][c] == n:
-                    desenhaImagem(lista_objetos[n-1], c*32, l*32)
-                    break
-                else:
-                    n += 1
+            if MAPA[l][c] == 1:
+                desenhaImagem(lista_objetos[0], c*32, l*32)
+            elif MAPA[l][c] == 2:
+                desenhaImagem(lista_objetos[1], c*32, l*32)
+            elif MAPA[l][c] == 3:
+                desenhaImagem(lista_objetos[2], c*32, l*32)
+            elif MAPA[l][c] == 4:
+                desenhaImagem(lista_objetos[3], c*32, l*32)
+            elif MAPA[l][c] == 5:
+                desenhaImagem(lista_objetos[4], c*32, l*32)
+            elif MAPA[l][c] == 6:
+                desenhaImagem(lista_objetos[5], c*32, l*32)
+            elif MAPA[l][c] == 7:
+                desenhaImagem(lista_objetos[6], c*32, l*32)
+            elif MAPA[l][c] == 8:
+                desenhaImagem(lista_objetos[7], c*32, l*32)
+            elif MAPA[l][c] == 9:
+                desenhaImagem(lista_objetos[8], c*32, l*32)
+            elif MAPA[l][c] == 10:
+                desenhaImagem(lista_objetos[9], c*32, l*32)
+            elif MAPA[l][c] == 11:
+                desenhaImagem(lista_objetos[10], c*32, l*32)
+            elif MAPA[l][c] == 12:
+                desenhaImagem(lista_objetos[11], c*32, l*32)
+            elif MAPA[l][c] == 13:
+                desenhaImagem(lista_objetos[12], c*32, l*32)
+            elif MAPA[l][c] == 14:
+                desenhaImagem(lista_objetos[13], c*32, l*32)
+            elif MAPA[l][c] == 15:
+                desenhaImagem(lista_objetos[14], c*32, l*32)
+            elif MAPA[l][c] == 16:
+                desenhaImagem(lista_objetos[15], c*32, l*32)
+            elif MAPA[l][c] == 17:
+                desenhaImagem(lista_objetos[16], c*32, l*32)
+            elif MAPA[l][c] == 18:
+                desenhaImagem(lista_objetos[17], c*32, l*32)
+            elif MAPA[l][c] == 19:
+                desenhaImagem(lista_objetos[18], c*32, l*32)
+            elif MAPA[l][c] == 0:
+                desenhaImagem(lista_objetos[19], c*32, l*32)
+            # n = 1
+            # while True:
+            #     if MAPA[l][c] == n:
+            #         desenhaImagem(lista_objetos[n-1], c*32, l*32)
+            #         break
+            #     else:
+            #         n += 1
 
     # nº no mapa: objeto -> índice em 'lista_objetos' = (nº no mapa) - 1
     # 0: ----
@@ -116,7 +156,7 @@ def carregaSprites(tamIcone: int):
     lista_imagem_jogador = [jogador_cima, jogador_baixo, jogador_esquerda, jogador_direita]
 
     parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
-    pilula = carregaImagem("Recursos/Imagens/pilula.png", (tamIcone, tamIcone))
+    pilula = carregaImagem("Recursos/Imagens/pilula2.png", (tamIcone, tamIcone))
     quina_noroeste = carregaImagem("Recursos/Imagens/quina_noroeste2.png", (tamIcone, tamIcone))
     parede_norte1 = carregaImagem("Recursos/Imagens/parede_norte1.png", (tamIcone, tamIcone))
     parede_oeste1 = carregaImagem("Recursos/Imagens/parede_oeste1.png", (tamIcone, tamIcone))
@@ -130,9 +170,12 @@ def carregaSprites(tamIcone: int):
     parede_sul2 = carregaImagem("Recursos/Imagens/parede_sul2.png", (tamIcone, tamIcone))
     parede_leste1 = carregaImagem("Recursos/Imagens/parede_leste1.png", (tamIcone, tamIcone))
     parede_leste2 = carregaImagem("Recursos/Imagens/parede_leste2.png", (tamIcone, tamIcone))
-    portal_leste = carregaImagem("Recursos/Imagens/portal_leste.png", (tamIcone, tamIcone))
-    lista_objetos = [parede, pilula, quina_noroeste, parede_norte1, parede_oeste1, parede_oeste2, parede_norte2, quina_nordeste, quina_sudoeste, quina_sudeste, parede_oeste3, parede_sul1, parede_sul2, parede_leste1, parede_leste2, portal_leste]
-    
+    portal_leste = carregaImagem("Recursos/Imagens/portal_leste2.png", (tamIcone, tamIcone))
+    portal_oeste = carregaImagem("Recursos/Imagens/portal_oeste1.png", (tamIcone, tamIcone))
+    portal_sul = carregaImagem("Recursos/Imagens/portal_sul1.png", (tamIcone, tamIcone))
+    portal_norte = carregaImagem("Recursos/Imagens/portal_norte1.png", (tamIcone, tamIcone))
+    piso = carregaImagem("Recursos/Imagens/piso2.png", (tamIcone, tamIcone))
+    lista_objetos = [parede, pilula, quina_noroeste, parede_norte1, parede_oeste1, parede_oeste2, parede_norte2, quina_nordeste, quina_sudoeste, quina_sudeste, parede_oeste3, parede_sul1, parede_sul2, parede_leste1, parede_leste2, portal_leste, portal_oeste, portal_sul, portal_norte, piso]
     return lista_imagem_jogador, lista_objetos
 
 def telaPontuacao(pilulasColetadas: int):
