@@ -42,11 +42,11 @@ MAPA = [
 
 MAPA_AUX = [
 [3,4,4,4,4,4,4,4,4,4,4,4,19,7,7,7,7,7,7,7,7,7,7,7,8],   
-[5,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,14],
-[6,0,1,1,1,2,1,1,2,1,1,1,2,1,1,1,1,1,1,2,1,1,1,2,14],
-[6,0,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
-[6,0,1,1,1,2,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
-[6,0,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,14],
+[5,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,1,2,2,2,2,2,14],
+[6,2,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,2,1,2,1,1,1,2,14],
+[6,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
+[6,1,1,1,2,1,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
+[6,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,14],
 [6,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,14],
 [6,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,14],
 [6,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,14],
@@ -57,9 +57,9 @@ MAPA_AUX = [
 [11,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1,1,2,2,2,15],
 [11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
 [11,2,2,2,1,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,2,15],
-[11,2,1,2,1,2,2,2,2,2,1,2,2,2,1,2,2,2,2,1,2,2,2,2,15],
-[11,2,1,2,1,2,1,1,1,2,1,2,1,1,1,1,1,1,2,1,2,1,1,2,15],
-[11,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,15],
+[11,2,1,2,1,2,2,2,2,2,2,1,2,2,1,2,2,2,2,1,2,2,2,2,15],
+[11,2,1,2,1,2,1,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,15],
+[11,2,2,2,2,2,2,2,2,2,2,1,2,1,2,2,2,2,2,2,2,2,2,2,15],
 [9,12,12,12,12,12,12,12,12,12,12,12,18,13,13,13,13,13,13,13,13,13,13,13,10]
 ]
 
@@ -141,6 +141,7 @@ def carregaSprites(tamIcone: int):
     Parâmetro:
         tamIcone: Tamanho padrão dos ícones
     """
+    # JOGADOR
     jogador_baixo = [carregaImagem("Recursos/Imagens/jogador_baixo1.png", (tamIcone, tamIcone)),
                      carregaImagem("Recursos/Imagens/jogador_baixo2.png", (tamIcone, tamIcone)),
                      carregaImagem("Recursos/Imagens/jogador_baixo3.png", (tamIcone, tamIcone))]
@@ -154,6 +155,21 @@ def carregaSprites(tamIcone: int):
                        carregaImagem("Recursos/Imagens/jogador_direita2.png", (tamIcone, tamIcone)),
                        carregaImagem("Recursos/Imagens/jogador_direita3.png", (tamIcone, tamIcone))]
     lista_imagem_jogador = [jogador_cima, jogador_baixo, jogador_esquerda, jogador_direita]
+
+    # SOMBRAS
+    sombra_baixo = [carregaImagem("Recursos/Imagens/sombra_baixo1.png", (tamIcone, tamIcone)),
+                     carregaImagem("Recursos/Imagens/sombra_baixo2.png", (tamIcone, tamIcone)),
+                     carregaImagem("Recursos/Imagens/sombra_baixo3.png", (tamIcone, tamIcone))]
+    sombra_cima = [carregaImagem("Recursos/Imagens/sombra_cima1.png", (tamIcone, tamIcone)),
+                    carregaImagem("Recursos/Imagens/sombra_cima2.png", (tamIcone, tamIcone)),
+                    carregaImagem("Recursos/Imagens/sombra_cima3.png", (tamIcone, tamIcone))]
+    sombra_esquerda = [carregaImagem("Recursos/Imagens/sombra_esquerda1.png", (tamIcone, tamIcone)),
+                        carregaImagem("Recursos/Imagens/sombra_esquerda2.png", (tamIcone, tamIcone)),
+                        carregaImagem("Recursos/Imagens/sombra_esquerda3.png", (tamIcone, tamIcone))]
+    sombra_direita = [carregaImagem("Recursos/Imagens/sombra_direita1.png", (tamIcone, tamIcone)),
+                       carregaImagem("Recursos/Imagens/sombra_direita2.png", (tamIcone, tamIcone)),
+                       carregaImagem("Recursos/Imagens/sombra_direita3.png", (tamIcone, tamIcone))]
+    lista_imagem_sombras = [sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita]
 
     parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
     pilula = carregaImagem("Recursos/Imagens/pilula2.png", (tamIcone, tamIcone))
@@ -176,7 +192,25 @@ def carregaSprites(tamIcone: int):
     portal_norte = carregaImagem("Recursos/Imagens/portal_norte1.png", (tamIcone, tamIcone))
     piso = carregaImagem("Recursos/Imagens/piso2.png", (tamIcone, tamIcone))
     lista_objetos = [parede, pilula, quina_noroeste, parede_norte1, parede_oeste1, parede_oeste2, parede_norte2, quina_nordeste, quina_sudoeste, quina_sudeste, parede_oeste3, parede_sul1, parede_sul2, parede_leste1, parede_leste2, portal_leste, portal_oeste, portal_sul, portal_norte, piso]
-    return lista_imagem_jogador, lista_objetos
+    return lista_imagem_jogador, lista_objetos, lista_imagem_sombras
+
+def verificaTeclaPressionada(direcaoIntencao):
+    """
+    Verifica qual tecla foi pressionada pelo jogador.
+    
+    Parâmetro:
+        direcaoIntencao: 
+    """
+    if teclaPressionada(K_UP):
+        direcaoIntencao = "UP"
+    elif teclaPressionada(K_DOWN):
+        direcaoIntencao = "DOWN"
+    elif teclaPressionada(K_LEFT):
+        direcaoIntencao = "LEFT"
+    elif teclaPressionada(K_RIGHT):
+        direcaoIntencao = "RIGHT"
+    
+    return direcaoIntencao
 
 def telaPontuacao(pilulasColetadas: int):
     """
@@ -378,7 +412,7 @@ def main():
     """
     criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
 
-    lista_imagem_jogador, lista_objetos = carregaSprites(32)
+    lista_imagem_jogador, lista_objetos, lista_imagem_sombras = carregaSprites(32)
     imagemJogador = lista_imagem_jogador[2]
     frameJogador = 0
     velocidadeAnimacaoJogador = 0.12
@@ -395,16 +429,9 @@ def main():
         #Limpa a janela
         limpaTela()
 
-        #Verifica se uma das teclas foi precionada
-        #Se sim, atualiza a inteção de movimento do Pacman
-        if teclaPressionada(K_UP):
-            direcaoIntencao = "UP"
-        elif teclaPressionada(K_DOWN):
-            direcaoIntencao = "DOWN"
-        elif teclaPressionada(K_LEFT):
-            direcaoIntencao = "LEFT"
-        elif teclaPressionada(K_RIGHT):
-            direcaoIntencao = "RIGHT"
+    # >>>> JOGADOR <<<<
+        
+        direcaoIntencao = verificaTeclaPressionada(direcaoIntencao)
             
         # Verifica a intenção de movimento
         direcaoAtual, yJogador, xJogador = verificaIntencao(direcaoAtual, direcaoIntencao, yJogador, xJogador)
