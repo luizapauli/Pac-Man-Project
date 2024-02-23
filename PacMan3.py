@@ -302,7 +302,7 @@ def verificaIntencao(direcaoAtual: str, direcaoIntencao: str, yJogador: int, xJo
 
     # Checa extremidades A e B (o que muda é o Y)
     if direcaoIntencao == "UP":
-        if (MAPA[yA-1][xA] == 0 or MAPA[yA-1][xA] == 2) and (MAPA[yB-1][xB] == 0 or MAPA[yB-1][xB] == 2):
+        if (MAPA[yA-1][xA] == 0 or MAPA[yA-1][xA] == 2 or MAPA[yA-1][xA] == 19) and (MAPA[yB-1][xB] == 0 or MAPA[yB-1][xB] == 2 or MAPA[yB-1][xB] == 19):
             direcaoAtual = direcaoIntencao    
     # Checa extremidades C e D (o que muda é o Y)
     elif direcaoIntencao== "DOWN":
@@ -350,16 +350,49 @@ def limitaParede(direcaoAtual: str, yJogador: int, xJogador: int):
         
     return direcaoAtual, yJogador, xJogador
 
-# FUNÇÃO SEM USO -> a ser atualizada
-def portal (direcao, tamIcone, yJogador, xJogador):
-    if direcao == "LEFT":
-        if yJogador == 9*32 and xJogador == 0:
-            xJogador = LARGURAJANELA - tamIcone
-    else:
-        if yJogador == 9*32 and xJogador == (LARGURAJANELA - tamIcone):
-            xJogador = 0
-    return xJogador
+def portal (direcaoAtual, tamIcone, yJogador, xJogador):
 
+    y = yJogador//32 
+    x = xJogador//32
+    j = 0
+    lista_direcoes = ["RIGHT", "LEFT", "DOWN", "UP"]
+    lista_portal = [16, 17, 18, 19] #leste, oeste, sul, norte
+
+    for i in range(len(lista_direcoes)):
+        if direcaoAtual == lista_direcoes[i]:
+            j = i
+            if lista_portal[i] == 16:
+                n = 1 # Modificador do índice
+                k = 0 # Modificador do Y (posicao)
+                h = 1 # Modificador do X (posicao)
+                x = (xJogador + 32)//32      
+            elif lista_portal[i] == 17:
+                n = (-1) 
+                k = 0 
+                h = (-1)  
+            elif lista_portal[i] == 18:
+                n = 1 
+                k = 1 
+                h = 0
+                y = (yJogador + 32)//32 
+            elif lista_portal[i] == 19:
+                n = (-1) 
+                k = (-1) 
+                h = 0
+            break
+    if direcaoAtual == lista_direcoes[j] and MAPA[y][x] == lista_portal[j]:
+        print("oi")
+        for l in range(len(MAPA)):
+            for c in range(len(MAPA[l])):
+                if MAPA[l][c] == lista_portal[j+n]:
+                    yJogador = (l+k)*tamIcone
+                    xJogador = (c+h)*tamIcone
+                    break
+                
+
+
+    return yJogador, xJogador
+    
 def coletaPilula (direcaoAtual, xJogador, yJogador):
     """
     Função responsável por coletar as pílulas do mapa (atualiza os valores do mapa).
@@ -413,14 +446,16 @@ def main():
     criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
 
     lista_imagem_jogador, lista_objetos, lista_imagem_sombras = carregaSprites(32)
+    # INFORMAÇÕES BASE
+    # >>>> JOGADOR <<<<
     imagemJogador = lista_imagem_jogador[2]
     frameJogador = 0
     velocidadeAnimacaoJogador = 0.12
-    direcaoAtual = direcaoIntencao= "STILL"
-
+    direcaoAtual = direcaoIntencao = "STILL"
     xJogador = 400
     yJogador = 320
 
+    # >>>> SOMBRAS <<<<
 
     while True:      
         if teclaPressionada(K_ESCAPE):
@@ -447,7 +482,10 @@ def main():
         pilulasColetadas = contaPilula()
         # print(pilulasColetadas)
         
+        yJogador, xJogador = portal (direcaoAtual, 32, yJogador, xJogador)
         direcaoAtual, yJogador, xJogador = limitaParede(direcaoAtual, yJogador, xJogador)
+
+        
 
 
         #Desenha o mapa
