@@ -67,53 +67,7 @@ def desenhaMapa(lista_objetos):
     
     for l in range(len(MAPA)):
         for c in range(len(MAPA[l])):
-            if MAPA[l][c] == 1:
-                desenhaImagem(lista_objetos[0], c*32, l*32)
-            elif MAPA[l][c] == 2:
-                desenhaImagem(lista_objetos[1], c*32, l*32)
-            elif MAPA[l][c] == 3:
-                desenhaImagem(lista_objetos[2], c*32, l*32)
-            elif MAPA[l][c] == 4:
-                desenhaImagem(lista_objetos[3], c*32, l*32)
-            elif MAPA[l][c] == 5:
-                desenhaImagem(lista_objetos[4], c*32, l*32)
-            elif MAPA[l][c] == 6:
-                desenhaImagem(lista_objetos[5], c*32, l*32)
-            elif MAPA[l][c] == 7:
-                desenhaImagem(lista_objetos[6], c*32, l*32)
-            elif MAPA[l][c] == 8:
-                desenhaImagem(lista_objetos[7], c*32, l*32)
-            elif MAPA[l][c] == 9:
-                desenhaImagem(lista_objetos[8], c*32, l*32)
-            elif MAPA[l][c] == 10:
-                desenhaImagem(lista_objetos[9], c*32, l*32)
-            elif MAPA[l][c] == 11:
-                desenhaImagem(lista_objetos[10], c*32, l*32)
-            elif MAPA[l][c] == 12:
-                desenhaImagem(lista_objetos[11], c*32, l*32)
-            elif MAPA[l][c] == 13:
-                desenhaImagem(lista_objetos[12], c*32, l*32)
-            elif MAPA[l][c] == 14:
-                desenhaImagem(lista_objetos[13], c*32, l*32)
-            elif MAPA[l][c] == 15:
-                desenhaImagem(lista_objetos[14], c*32, l*32)
-            elif MAPA[l][c] == 16:
-                desenhaImagem(lista_objetos[15], c*32, l*32)
-            elif MAPA[l][c] == 17:
-                desenhaImagem(lista_objetos[16], c*32, l*32)
-            elif MAPA[l][c] == 18:
-                desenhaImagem(lista_objetos[17], c*32, l*32)
-            elif MAPA[l][c] == 19:
-                desenhaImagem(lista_objetos[18], c*32, l*32)
-            elif MAPA[l][c] == 0:
-                desenhaImagem(lista_objetos[19], c*32, l*32)
-            # n = 1
-            # while True:
-            #     if MAPA[l][c] == n:
-            #         desenhaImagem(lista_objetos[n-1], c*32, l*32)
-            #         break
-            #     else:
-            #         n += 1
+            desenhaImagem(lista_objetos[(MAPA[l][c])], c*32, l*32)
 
     # nº no mapa: objeto -> índice em 'lista_objetos' = (nº no mapa) - 1
     # 0: ----
@@ -133,6 +87,10 @@ def desenhaMapa(lista_objetos):
     # 14: parede leste 1
     # 15: parede leste 2
     # 16: portal leste
+    # 17: portal oeste
+    # 18: portal sul
+    # 19: portal norte
+    # 20: piso
 
 def carregaSprites(tamIcone: int):
     """
@@ -169,10 +127,10 @@ def carregaSprites(tamIcone: int):
     sombra_direita = [carregaImagem("Recursos/Imagens/sombra_direita1.png", (tamIcone, tamIcone)),
                        carregaImagem("Recursos/Imagens/sombra_direita2.png", (tamIcone, tamIcone)),
                        carregaImagem("Recursos/Imagens/sombra_direita3.png", (tamIcone, tamIcone))]
-    lista_imagem_sombras = [sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita]
+    lista_imagem_sombras = [[sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita], [sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita]]
 
     parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
-    pilula = carregaImagem("Recursos/Imagens/pilula2.png", (tamIcone, tamIcone))
+    pilula = carregaImagem("Recursos/Imagens/pilula4.png", (tamIcone, tamIcone))
     quina_noroeste = carregaImagem("Recursos/Imagens/quina_noroeste2.png", (tamIcone, tamIcone))
     parede_norte1 = carregaImagem("Recursos/Imagens/parede_norte1.png", (tamIcone, tamIcone))
     parede_oeste1 = carregaImagem("Recursos/Imagens/parede_oeste1.png", (tamIcone, tamIcone))
@@ -190,8 +148,8 @@ def carregaSprites(tamIcone: int):
     portal_oeste = carregaImagem("Recursos/Imagens/portal_oeste1.png", (tamIcone, tamIcone))
     portal_sul = carregaImagem("Recursos/Imagens/portal_sul1.png", (tamIcone, tamIcone))
     portal_norte = carregaImagem("Recursos/Imagens/portal_norte1.png", (tamIcone, tamIcone))
-    piso = carregaImagem("Recursos/Imagens/piso2.png", (tamIcone, tamIcone))
-    lista_objetos = [parede, pilula, quina_noroeste, parede_norte1, parede_oeste1, parede_oeste2, parede_norte2, quina_nordeste, quina_sudoeste, quina_sudeste, parede_oeste3, parede_sul1, parede_sul2, parede_leste1, parede_leste2, portal_leste, portal_oeste, portal_sul, portal_norte, piso]
+    piso = carregaImagem("Recursos/Imagens/piso5.png",(32,32))
+    lista_objetos = [piso, parede, pilula, quina_noroeste, parede_norte1, parede_oeste1, parede_oeste2, parede_norte2, quina_nordeste, quina_sudoeste, quina_sudeste, parede_oeste3, parede_sul1, parede_sul2, parede_leste1, parede_leste2, portal_leste, portal_oeste, portal_sul, portal_norte]
     return lista_imagem_jogador, lista_objetos, lista_imagem_sombras
 
 def verificaTeclaPressionada(direcaoIntencao):
@@ -310,11 +268,11 @@ def verificaIntencao(direcaoAtual: str, direcaoIntencao: str, yJogador: int, xJo
             direcaoAtual = direcaoIntencao       
     # Checa extremidades A e C (o que muda é o X)      
     elif direcaoIntencao == "LEFT":
-        if (MAPA[yA][xA-1] == 0 or MAPA[yA][xA-1] == 2) and (MAPA[yC][xC-1] == 0 or MAPA[yC][xC-1] == 2):
+        if (MAPA[yA][xA-1] == 0 or MAPA[yA][xA-1] == 2 or MAPA[yA][xA-1] == 17) and (MAPA[yC][xC-1] == 0 or MAPA[yC][xC-1] == 2 or MAPA[yC][xC-1] == 17):
             direcaoAtual = direcaoIntencao
     # Checa extremidades B e D (o que muda é o X) 
     elif direcaoIntencao == "RIGHT":
-        if (MAPA[yB][xB+1] == 0 or MAPA[yB][xB+1] == 2) and (MAPA[yD][xD+1] == 0 or MAPA[yD][xD+1] == 2):
+        if (MAPA[yB][xB+1] == 0 or MAPA[yB][xB+1] == 2 or MAPA[yB][xB+1] == 16) and (MAPA[yD][xD+1] == 0 or MAPA[yD][xD+1] == 2 or MAPA[yD][xD+1] == 16):
             direcaoAtual = direcaoIntencao
         
 
@@ -456,16 +414,22 @@ def main():
     yJogador = 320
 
     # >>>> SOMBRAS <<<<
+    xSombra1 = 32
+    ySombra1 = 32
+    imagemSombra1 = lista_imagem_sombras[0][1]
+    
 
     while True:      
         if teclaPressionada(K_ESCAPE):
             break
-
         #Limpa a janela
         limpaTela()
 
-    # >>>> JOGADOR <<<<
+    # >>>> SOMBRAS <<<<
         
+
+
+    # >>>> JOGADOR E MAPA <<<<
         direcaoIntencao = verificaTeclaPressionada(direcaoIntencao)
             
         # Verifica a intenção de movimento
@@ -485,9 +449,6 @@ def main():
         yJogador, xJogador = portal (direcaoAtual, 32, yJogador, xJogador)
         direcaoAtual, yJogador, xJogador = limitaParede(direcaoAtual, yJogador, xJogador)
 
-        
-
-
         #Desenha o mapa
         desenhaMapa(lista_objetos)
 
@@ -502,6 +463,8 @@ def main():
         else:
             desenhaImagem(imagemJogador[0], xJogador, yJogador)
 
+        desenhaImagem(imagemSombra1[0], xSombra1, ySombra1)
+        
         #Atualiza os objetos na janela
         atualizaTelaJogo()
 
