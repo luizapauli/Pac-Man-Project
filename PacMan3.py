@@ -23,10 +23,10 @@ MAPA = [
 [5,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,1,2,2,2,2,2,14],
 [6,2,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,2,1,2,1,1,1,2,14],
 [6,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
-[6,1,1,1,2,1,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
-[6,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,14],
+[6,1,1,1,2,1,1,2,1,2,2,2,1,1,1,2,1,1,1,2,1,2,1,2,14],
+[6,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,1,2,14],
 [6,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,14],
-[6,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,14],
+[6,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,2,2,2,2,14],
 [6,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,14],
 [17,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,16],
 [11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,15],
@@ -91,7 +91,7 @@ def desenhaMapa(lista_objetos):
     # 17: portal oeste
     # 18: portal sul
     # 19: portal norte
-    # 20: piso
+    # 
 
 def carregaSprites(tamIcone: int):
     """
@@ -128,10 +128,10 @@ def carregaSprites(tamIcone: int):
     sombra_direita = [carregaImagem("Recursos/Imagens/sombra_direita1.png", (tamIcone, tamIcone)),
                        carregaImagem("Recursos/Imagens/sombra_direita2.png", (tamIcone, tamIcone)),
                        carregaImagem("Recursos/Imagens/sombra_direita3.png", (tamIcone, tamIcone))]
-    lista_imagem_sombras = [[sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita], [sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita]]
+    lista_imagem_sombras = [[sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita], [sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita], [sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita]]
 
     parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
-    pilula = carregaImagem("Recursos/Imagens/pilula4.png", (tamIcone, tamIcone))
+    pilula = carregaImagem("Recursos/Imagens/pilula7.png", (tamIcone, tamIcone))
     quina_noroeste = carregaImagem("Recursos/Imagens/quina_noroeste2.png", (tamIcone, tamIcone))
     parede_norte1 = carregaImagem("Recursos/Imagens/parede_norte1.png", (tamIcone, tamIcone))
     parede_oeste1 = carregaImagem("Recursos/Imagens/parede_oeste1.png", (tamIcone, tamIcone))
@@ -182,7 +182,7 @@ def telaPontuacao(pilulasColetadas: int):
     desenhaImagem(pontuacao, 0, 640)
     desenhaTexto(str(pilulasColetadas), 180, 658, 35, "firebrick4") #coral4
 
-def desenhaPersonagem(direcaoAtual, frame, velocidadeAnimacao, imagemPersonagem, x, y):
+def desenhaPersonagem(direcaoAtual: str, frame: int, velocidadeAnimacao: float, imagemPersonagem: int, x, y):
 
     if direcaoAtual != "STILL":
             frame += velocidadeAnimacao
@@ -194,7 +194,7 @@ def desenhaPersonagem(direcaoAtual, frame, velocidadeAnimacao, imagemPersonagem,
 
     return frame
 
-def defineImagemJogador(direcaoAtual: str, imagemJogador: int, lista_imagem_jogador: list):
+def defineImagemPersonagem(direcaoAtual: str, imagemJogador: int, lista_imagem_jogador: list):
     """
     Define o conjunto de imagens do jogador a ser utilizado de acordo com a direção atual.
     
@@ -415,9 +415,11 @@ def movimentoSombras(i: int, coordenadas_sombras: list, direcaoAtualSombra: list
     Função responsável por movimentar as sombras.
 
     Parâmetros:
-        i: número correspondente ao índice da lista referente à sombra;
+        i: índice da lista referente à sombra;
         coordenadas_sombras: lista com as coordenadas de todas as sombras;
         direcaoAtualSombra: lista com a direção atual de cada sombra.
+    Retorno:
+        coordenadas_sombras: lista com as coordenadas de todas as sombras;
 
     """
     x = 0
@@ -439,7 +441,15 @@ def movimentoSombras(i: int, coordenadas_sombras: list, direcaoAtualSombra: list
     return coordenadas_sombras
 
 def direcaoDisponivelSombra (i: int, coordenadas_sombras: list):
-# coordenadas_sombras [qual sombra][x ou y]
+    """
+    Função responsável por identificar as direções disponíveis para a sombra e retornar a lista de direções disponíveis
+    Parâmetros:
+        i: índice da lista referente à sombra;
+        coordenadas_sombras: lista com as coordenadas de todas as sombras;
+    Retorno:
+        direcoes_disponiveis: lista de direções disponíveis no momento.
+    """
+    # coordenadas_sombras [qual sombra][x ou y]
     
     # Representação das extremidades da imagem do personagem:
     # A---B
@@ -470,31 +480,54 @@ def direcaoDisponivelSombra (i: int, coordenadas_sombras: list):
     return direcoes_disponiveis
 
 def sorteiaDirecaoSombra(i: int, direcoes_disponiveis: list, direcaoAtualSombra: list, direcaoOposta: str):
-    if i == 0:
-        if len(direcoes_disponiveis) >= 3:
-            try:
-                direcoes_disponiveis.remove(direcaoOposta)
-            except ValueError:
-                pass
-    print(direcoes_disponiveis)
+    """
+    Função responsável por sortear a direção a ser seguida usando a lista de direções disponíveis.
+
+    Parâmetros:
+        i: índice da lista referente à sombra;
+        direcoes_disponiveis: lista de direções disponíveis no momento;
+        direcaoAtualSombra: lista com as direções atuais de cada sombra;
+        direcaoOposta: lista com as direções opostas de cada sombra.
+    Retorno:
+        direcaoAtualSombra: lista atualizada com as direções atuais de cada sombra.
+    """
+    
+
+        # if i == 3:
+    # print(i)
+    # print(len(direcoes_disponiveis))
+    if i == 2 and len(direcoes_disponiveis) >= 3:
+        print(direcoes_disponiveis)
+        try:
+            direcoes_disponiveis.remove(direcaoAtualSombra[i])
+        except ValueError:
+            pass
+        print(direcoes_disponiveis)
+
+    if len(direcoes_disponiveis) >= 2:
+        try:
+            direcoes_disponiveis.remove(direcaoOposta[i])
+        except ValueError:
+            pass
+
+    # print(direcoes_disponiveis)
     
     direcaoSorteada = r.choices(direcoes_disponiveis)
-    print(direcaoSorteada)
+    # print(direcaoSorteada)
     direcaoAtualSombra[i] = ''.join(direcaoSorteada)
-    print(direcaoSorteada)
+    # print(direcaoSorteada)
     return direcaoAtualSombra
 
 def defineDirecaoOposta(i: int, direcaoAtualSombra: list, direcaoOposta: str):
 
     if direcaoAtualSombra[i] == "LEFT":
-        direcaoOposta = "RIGHT"
+        direcaoOposta[i] = "RIGHT"
     elif direcaoAtualSombra[i] == "RIGHT":
-        direcaoOposta = "LEFT"
+        direcaoOposta[i] = "LEFT"
     elif direcaoAtualSombra[i] == "UP":
-        direcaoOposta = "DOWN"
+        direcaoOposta[i] = "DOWN"
     elif direcaoAtualSombra[i] == "DOWN":
-        direcaoOposta = "UP"
-    
+        direcaoOposta[i] = "UP"
     return direcaoOposta
 
 def limitaParedeSombra(i: int, direcaoAtualSombra: list, coordenadas_sombras: list):
@@ -536,7 +569,9 @@ def main():
     criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
 
     lista_imagem_jogador, lista_objetos, lista_imagem_sombras = carregaSprites(32)
+
     # INFORMAÇÕES BASE
+
     # >>>> JOGADOR <<<<
     imagemJogador = lista_imagem_jogador[2]
     frameJogador = 0
@@ -547,14 +582,13 @@ def main():
 
     # >>>> SOMBRAS <<<<
     velocidadeAnimacaoSombra = 0.2
-    frameSombra = 0
-    sombra1 = [32, 32] # [x, y]
-    sombra2 = [736, 32]
-    coordenadas_sombras = [sombra1, sombra2]
-    direcaoAtualSombra = ["STILL", "STILL"]
-    direcaoOposta = "RIGHT"
-    imagemSombra1 = lista_imagem_sombras[0][1]
-    imagemSombra2 = lista_imagem_sombras[1][1]
+    frameSombras = [0, 0, 0]
+    coordenadas_sombras = [[32, 32], [736, 576], [736, 32]] #[sombra 1, sombra 2, ...] -> [[x, y], ...]
+    direcaoAtualSombra = ["STILL", "STILL", "STILL"]
+    direcaoOposta = ["STILL", "STILL", "STILL"]
+    imagemSombras = [lista_imagem_sombras[0][1], lista_imagem_sombras[1][1], lista_imagem_sombras[2][1]]
+    # imagemSombra1 = lista_imagem_sombras[0][1]
+    # imagemSombra2 = lista_imagem_sombras[1][1]
     
 
     while True:      
@@ -564,27 +598,33 @@ def main():
         limpaTela()
 
     # >>>> SOMBRAS <<<<
-        # SOMBRA 1 --> aleatória
-        
-        # Verifica os caminhos possíveis
-        # direcoes_disponiveis_aux = direcoes_disponiveis
-        direcoes_disponiveis = direcaoDisponivelSombra (0, coordenadas_sombras)
-        direcaoOposta = defineDirecaoOposta(0, direcaoAtualSombra, direcaoOposta)
-        # print(direcoes_disponiveis)
-        # print(direcoes_disponiveis_aux)
+    # Sombra 1 e 2 --> aleatória
+    # Sombra 3 --> sempre bifurca
+          
+        j = 0
+        while j < 3:
+            # Verifica os caminhos possíveis
+            direcoes_disponiveis = direcaoDisponivelSombra (j, coordenadas_sombras)
+            direcaoOposta = defineDirecaoOposta(j, direcaoAtualSombra, direcaoOposta)
+            # print(direcoes_disponiveis)
+            # print(direcoes_disponiveis_aux)
 
-        # Sorteia qual direção seguir
-        if direcaoAtualSombra[0] == "STILL" or len(direcoes_disponiveis) >= 3:
-            direcaoAtualSombra = sorteiaDirecaoSombra(0, direcoes_disponiveis, direcaoAtualSombra, direcaoOposta)
-        
+            # Sorteia qual direção seguir
+            if direcaoAtualSombra[j] == "STILL" or len(direcoes_disponiveis) >= 3:
+                direcaoAtualSombra = sorteiaDirecaoSombra(j, direcoes_disponiveis, direcaoAtualSombra, direcaoOposta)
+            
+            # print(direcaoAtualSombra)
 
-        print(direcaoAtualSombra)
+            imagemSombras[j] = defineImagemPersonagem(direcaoAtualSombra[j], imagemSombras[j], lista_imagem_sombras[j])
 
-        imagemSombra1 = defineImagemJogador(direcaoAtualSombra[0], imagemSombra1, lista_imagem_sombras[0])
+            # Atualiza a posição da sombra 1
+            coordenadas_sombras = movimentoSombras(j, coordenadas_sombras, direcaoAtualSombra)
+            direcaoAtualSombra, coordenadas_sombras = limitaParedeSombra(j, direcaoAtualSombra, coordenadas_sombras)
 
-        # Atualiza a posição da sombra 1
-        coordenadas_sombras = movimentoSombras(0, coordenadas_sombras, direcaoAtualSombra)
-        direcaoAtualSombra, coordenadas_sombras = limitaParedeSombra(0, direcaoAtualSombra, coordenadas_sombras)
+            j += 1
+ 
+
+
 
     # >>>> JOGADOR E MAPA <<<<
         direcaoIntencao = verificaTeclaPressionada(direcaoIntencao)
@@ -593,7 +633,7 @@ def main():
         direcaoAtual, yJogador, xJogador = verificaIntencao(direcaoAtual, direcaoIntencao, yJogador, xJogador)
         
         # Atualiza a imagem do jogador
-        imagemJogador = defineImagemJogador(direcaoAtual, imagemJogador, lista_imagem_jogador)
+        imagemJogador = defineImagemPersonagem(direcaoAtual, imagemJogador, lista_imagem_jogador)
 
         # Atualiza a posição do jogador
         yJogador, xJogador = movimentoJogador(direcaoAtual, yJogador, xJogador)
@@ -614,14 +654,10 @@ def main():
         # Desenha o jogador
         frameJogador = desenhaPersonagem(direcaoAtual, frameJogador, velocidadeAnimacaoJogador, imagemJogador, xJogador, yJogador)
 
-        # coordenadas_sombras = movimentoSombras(0, coordenadas_sombras, direcaoAtualSombra)
-        # direcoes_disponiveis = direcaoDisponivelSombra (0, coordenadas_sombras)
-        # direcaoAtualSombra = sorteiaDirecaoSombra(0, direcoes_disponiveis, direcaoAtualSombra)
-
         # Desenha Sombra
-        frameSombra = desenhaPersonagem(direcaoAtualSombra[0], frameSombra, velocidadeAnimacaoSombra, imagemSombra1, coordenadas_sombras[0][0], coordenadas_sombras[0][1])
-        frameSombra = desenhaPersonagem(direcaoAtualSombra[1], frameSombra, velocidadeAnimacaoSombra, imagemSombra2, coordenadas_sombras[1][0], coordenadas_sombras[1][1])
-        
+        frameSombras[0] = desenhaPersonagem(direcaoAtualSombra[0], frameSombras[0], velocidadeAnimacaoSombra, imagemSombras[0], coordenadas_sombras[0][0], coordenadas_sombras[0][1])
+        frameSombras[1] = desenhaPersonagem(direcaoAtualSombra[1], frameSombras[1], velocidadeAnimacaoSombra, imagemSombras[1], coordenadas_sombras[1][0], coordenadas_sombras[1][1])
+        frameSombras[2] = desenhaPersonagem(direcaoAtualSombra[2], frameSombras[2], velocidadeAnimacaoSombra, imagemSombras[2], coordenadas_sombras[2][0], coordenadas_sombras[2][1])
         
         #Atualiza os objetos na janela
         atualizaTelaJogo()
