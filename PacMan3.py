@@ -497,12 +497,12 @@ def sorteiaDirecaoSombra(i: int, direcoes_disponiveis: list, direcaoAtualSombra:
     # print(i)
     # print(len(direcoes_disponiveis))
     if i == 2 and len(direcoes_disponiveis) >= 3:
-        print(direcoes_disponiveis)
+        # print(direcoes_disponiveis)
         try:
             direcoes_disponiveis.remove(direcaoAtualSombra[i])
         except ValueError:
             pass
-        print(direcoes_disponiveis)
+        # print(direcoes_disponiveis)
 
     if len(direcoes_disponiveis) >= 2:
         try:
@@ -562,6 +562,36 @@ def limitaParedeSombra(i: int, direcaoAtualSombra: list, coordenadas_sombras: li
         
     return direcaoAtualSombra, coordenadas_sombras
 
+def checaGameOver(gameOver, xJogador, yJogador, coordenadas_sombras: list):
+    """
+    """
+    # Representação das extremidades da imagem do personagem:
+    # A---B
+    # |   |
+    # C---D
+
+    xA = xC = xJogador//32
+    xB = xD = (xJogador + 16)//32
+    yA = yB = yJogador//32
+    yC = yD = (yJogador + 16)//32
+    coordenadas_personagem = [[xA, yA], [xB, yB], [xC, yC], [xD, yD]]
+
+    x0 = (coordenadas_sombras[0][0] + 8)//32
+    y0 = coordenadas_sombras[0][1]//32
+    x1 = (coordenadas_sombras[1][0] + 8)//32
+    y1 = coordenadas_sombras[1][1]//32
+    x2 = (coordenadas_sombras[2][0] + 8)//32
+    y2 = coordenadas_sombras[2][1]//32
+    xy_sombras = [[x0, y0], [x1, y1], [x2, y2]]
+
+    for i in range(len(coordenadas_personagem)):
+        for j in range(len(xy_sombras)):
+            if xy_sombras[j] == coordenadas_personagem[i]:
+                gameOver = True
+                break
+
+    return gameOver
+
 def main():
     """
     Função responsável por unir as outras funções.
@@ -571,6 +601,9 @@ def main():
     lista_imagem_jogador, lista_objetos, lista_imagem_sombras = carregaSprites(32)
 
     # INFORMAÇÕES BASE
+
+    # >>>> GERAL <<<<
+    gameOver = False
 
     # >>>> JOGADOR <<<<
     imagemJogador = lista_imagem_jogador[2]
@@ -586,12 +619,10 @@ def main():
     coordenadas_sombras = [[32, 32], [736, 576], [736, 32]] #[sombra 1, sombra 2, ...] -> [[x, y], ...]
     direcaoAtualSombra = ["STILL", "STILL", "STILL"]
     direcaoOposta = ["STILL", "STILL", "STILL"]
-    imagemSombras = [lista_imagem_sombras[0][1], lista_imagem_sombras[1][1], lista_imagem_sombras[2][1]]
-    # imagemSombra1 = lista_imagem_sombras[0][1]
-    # imagemSombra2 = lista_imagem_sombras[1][1]
-    
+    imagemSombras = [lista_imagem_sombras[0][1], lista_imagem_sombras[1][1], lista_imagem_sombras[2][1]]  
 
-    while True:      
+    while gameOver == False:
+    # while True:   
         if teclaPressionada(K_ESCAPE):
             break
         #Limpa a janela
@@ -622,9 +653,6 @@ def main():
             direcaoAtualSombra, coordenadas_sombras = limitaParedeSombra(j, direcaoAtualSombra, coordenadas_sombras)
 
             j += 1
- 
-
-
 
     # >>>> JOGADOR E MAPA <<<<
         direcaoIntencao = verificaTeclaPressionada(direcaoIntencao)
@@ -651,6 +679,7 @@ def main():
 
         telaPontuacao(pilulasColetadas)
 
+        
         # Desenha o jogador
         frameJogador = desenhaPersonagem(direcaoAtual, frameJogador, velocidadeAnimacaoJogador, imagemJogador, xJogador, yJogador)
 
@@ -659,8 +688,13 @@ def main():
         frameSombras[1] = desenhaPersonagem(direcaoAtualSombra[1], frameSombras[1], velocidadeAnimacaoSombra, imagemSombras[1], coordenadas_sombras[1][0], coordenadas_sombras[1][1])
         frameSombras[2] = desenhaPersonagem(direcaoAtualSombra[2], frameSombras[2], velocidadeAnimacaoSombra, imagemSombras[2], coordenadas_sombras[2][0], coordenadas_sombras[2][1])
         
+        
+
         #Atualiza os objetos na janela
         atualizaTelaJogo()
+
+        gameOver = checaGameOver(gameOver, xJogador, yJogador, coordenadas_sombras)
+        
 
         
     finalizaJogo()
