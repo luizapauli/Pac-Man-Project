@@ -20,47 +20,47 @@ ALTURAJANELA = 680
 ICONE = "Recursos/Imagens/icone.png"
 MAPA = [
 [3,4,4,4,4,4,4,4,4,4,4,4,19,7,7,7,7,7,7,7,7,7,7,7,8],   
-[5,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,1,2,2,2,2,2,14],
-[6,2,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,2,1,2,1,1,1,2,14],
-[6,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
-[6,1,1,1,2,1,1,2,1,2,2,2,1,1,1,2,1,1,1,2,1,2,1,2,14],
-[6,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,1,2,14],
-[6,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,14],
-[6,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,2,2,2,2,14],
-[6,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,14],
-[17,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,16],
-[11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,15],
-[11,2,2,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,2,15],
-[11,1,1,2,1,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
-[11,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1,1,2,2,2,15],
-[11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
-[11,2,2,2,1,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,2,15],
-[11,2,1,2,1,2,2,2,2,2,2,1,2,2,1,2,2,2,2,1,2,2,2,2,15],
-[11,2,1,2,1,2,1,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,15],
-[11,2,2,2,2,2,2,2,2,2,2,1,2,1,2,2,2,2,2,2,2,2,2,2,15],
+[5,2,2,2,2,2,2,2,2,2,2,23,2,2,2,2,2,2,25,2,2,2,2,2,14],
+[6,2,21,21,21,21,1,21,2,21,1,21,21,21,2,21,21,2,25,2,21,21,1,2,14],
+[6,2,2,2,2,2,23,2,2,2,23,2,2,2,2,2,2,2,2,2,2,2,25,2,14],
+[6,21,21,21,2,21,1,2,23,2,2,2,25,21,21,2,25,21,21,2,25,2,25,2,14],
+[6,2,2,2,2,2,2,2,23,2,21,21,21,2,2,2,25,2,2,2,25,2,25,2,14],
+[6,2,21,21,1,21,21,2,23,2,2,2,2,2,25,2,2,2,25,2,25,2,25,2,14],
+[6,2,2,2,23,2,2,2,21,21,2,21,21,2,25,2,21,21,21,2,2,2,2,2,14],
+[6,2,23,2,23,2,23,2,2,2,2,2,2,2,25,2,2,2,2,2,25,2,21,21,14],
+[17,2,2,2,23,2,21,21,21,21,2,21,21,21,21,2,25,2,21,21,21,2,2,2,16],
+[11,2,23,2,2,2,2,2,2,2,2,2,2,2,2,2,25,2,2,2,2,2,25,2,15],
+[11,2,2,2,24,24,24,2,24,24,24,24,24,2,24,24,1,24,2,24,24,2,25,2,15],
+[11,24,24,2,23,2,2,2,2,2,23,2,2,2,2,2,2,2,2,2,2,2,25,2,15],
+[11,2,2,2,1,24,2,24,24,2,23,2,24,24,24,2,24,24,24,24,24,2,2,2,15],
+[11,2,23,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,25,2,15],
+[11,2,2,2,24,24,2,24,24,24,24,24,24,2,25,2,24,24,24,24,24,24,1,2,15],
+[11,2,23,2,23,2,2,2,2,2,2,23,2,2,25,2,2,2,2,25,2,2,2,2,15],
+[11,2,23,2,23,2,24,24,24,2,24,23,2,1,1,2,24,24,2,25,2,24,24,2,15],
+[11,2,2,2,2,2,2,2,2,2,2,23,2,25,2,2,2,2,2,2,2,2,2,2,15],
 [9,12,12,12,12,12,12,12,12,12,12,12,18,13,13,13,13,13,13,13,13,13,13,13,10]
 ]
 
 MAPA_AUX = [
 [3,4,4,4,4,4,4,4,4,4,4,4,19,7,7,7,7,7,7,7,7,7,7,7,8],   
-[5,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,1,2,2,2,2,2,14],
-[6,2,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,2,1,2,1,1,1,2,14],
-[6,2,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,14],
-[6,1,1,1,2,1,1,2,1,2,2,2,1,1,1,2,1,1,1,1,1,2,1,2,14],
-[6,2,2,2,2,2,2,2,1,2,1,1,1,2,2,2,1,2,2,2,1,2,2,2,14],
-[6,2,1,1,1,1,1,2,1,2,2,2,2,2,1,2,2,2,1,2,1,2,1,2,14],
-[6,2,2,2,1,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,2,2,2,14],
-[6,2,1,2,1,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,1,1,14],
-[17,2,2,2,1,2,1,1,1,1,2,1,1,1,1,2,1,2,1,1,1,2,2,2,16],
-[11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,1,2,15],
-[11,2,2,2,1,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1,1,2,1,2,15],
-[11,1,1,2,1,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
-[11,2,2,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1,1,2,2,2,15],
-[11,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,2,15],
-[11,2,2,2,1,1,2,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,2,15],
-[11,2,1,2,1,2,2,2,2,2,2,1,2,2,1,2,2,2,2,1,2,2,2,2,15],
-[11,2,1,2,1,2,1,1,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,15],
-[11,2,2,2,2,2,2,2,2,2,2,1,2,1,2,2,2,2,2,2,2,2,2,2,15],
+[5,2,2,2,2,2,2,2,2,2,2,23,2,2,2,2,2,2,25,2,2,2,2,2,14],
+[6,2,21,21,21,21,1,21,2,21,1,21,21,21,2,21,21,2,25,2,21,21,1,2,14],
+[6,2,2,2,2,2,23,2,2,2,23,2,2,2,2,2,2,2,2,2,2,2,25,2,14],
+[6,21,21,21,2,21,1,2,23,2,2,2,25,21,21,2,25,21,21,2,25,2,25,2,14],
+[6,2,2,2,2,2,2,2,23,2,21,21,21,2,2,2,25,2,2,2,25,2,25,2,14],
+[6,2,21,21,1,21,21,2,23,2,2,2,2,2,25,2,2,2,25,2,25,2,25,2,14],
+[6,2,2,2,23,2,2,2,21,21,2,21,21,2,25,2,21,21,21,2,2,2,2,2,14],
+[6,2,23,2,23,2,23,2,2,2,2,2,2,2,25,2,2,2,2,2,25,2,21,21,14],
+[17,2,2,2,23,2,21,21,21,21,2,21,21,21,21,2,25,2,21,21,21,2,2,2,16],
+[11,2,23,2,2,2,2,2,2,2,2,2,2,2,2,2,25,2,2,2,2,2,25,2,15],
+[11,2,2,2,24,24,24,2,24,24,24,24,24,2,24,24,1,24,2,24,24,2,25,2,15],
+[11,24,24,2,23,2,2,2,2,2,23,2,2,2,2,2,2,2,2,2,2,2,25,2,15],
+[11,2,2,2,1,24,2,24,24,2,23,2,24,24,24,2,24,24,24,24,24,2,2,2,15],
+[11,2,23,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,25,2,15],
+[11,2,2,2,24,24,2,24,24,24,24,24,24,2,25,2,24,24,24,24,24,24,1,2,15],
+[11,2,23,2,23,2,2,2,2,2,2,23,2,2,25,2,2,2,2,25,2,2,2,2,15],
+[11,2,23,2,23,2,24,24,24,2,24,23,2,1,1,2,24,24,2,25,2,24,24,2,15],
+[11,2,2,2,2,2,2,2,2,2,2,23,2,25,2,2,2,2,2,2,2,2,2,2,15],
 [9,12,12,12,12,12,12,12,12,12,12,12,18,13,13,13,13,13,13,13,13,13,13,13,10]
 ]
 
@@ -91,7 +91,12 @@ def desenhaMapa(lista_objetos):
     # 17: portal oeste
     # 18: portal sul
     # 19: portal norte
-    # 
+    # 20: muroV
+    # 21: muro M horizontal
+    # 22: caldeirao
+    # 23: muro M vertical 1
+    # 24: muro M horizontal 2
+    # 25: muro vertical 2
 
 def carregaSprites(tamIcone: int):
     """
@@ -129,7 +134,8 @@ def carregaSprites(tamIcone: int):
                        carregaImagem("Recursos/Imagens/sombra_direita2.png", (tamIcone, tamIcone)),
                        carregaImagem("Recursos/Imagens/sombra_direita3.png", (tamIcone, tamIcone))]
     lista_imagem_sombras = [[sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita], [sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita], [sombra_cima, sombra_baixo, sombra_esquerda, sombra_direita]]
-
+    
+    piso = carregaImagem("Recursos/Imagens/piso5.png",(32,32))
     parede = carregaImagem("Recursos/Imagens/parede.png", (tamIcone, tamIcone))
     pilula = carregaImagem("Recursos/Imagens/pilula7.png", (tamIcone, tamIcone))
     quina_noroeste = carregaImagem("Recursos/Imagens/quina_noroeste2.png", (tamIcone, tamIcone))
@@ -149,9 +155,35 @@ def carregaSprites(tamIcone: int):
     portal_oeste = carregaImagem("Recursos/Imagens/portal_oeste1.png", (tamIcone, tamIcone))
     portal_sul = carregaImagem("Recursos/Imagens/portal_sul1.png", (tamIcone, tamIcone))
     portal_norte = carregaImagem("Recursos/Imagens/portal_norte1.png", (tamIcone, tamIcone))
-    piso = carregaImagem("Recursos/Imagens/piso5.png",(32,32))
-    lista_objetos = [piso, parede, pilula, quina_noroeste, parede_norte1, parede_oeste1, parede_oeste2, parede_norte2, quina_nordeste, quina_sudoeste, quina_sudeste, parede_oeste3, parede_sul1, parede_sul2, parede_leste1, parede_leste2, portal_leste, portal_oeste, portal_sul, portal_norte]
+    
+    muroV = carregaImagem("Recursos/Imagens/muroV_horizontal.png",(32,32))
+    muroM = carregaImagem("Recursos/Imagens/muroM_horizontal.png",(32,32))
+    caldeirao = carregaImagem("Recursos/Imagens/caldeirao.png",(32,32))
+    muroM1 = carregaImagem("Recursos/Imagens/muroM_vertical1.png",(32,32))
+    muroM2 = carregaImagem("Recursos/Imagens/muroM_horizontal2.png",(32,32))
+    muroM3 = carregaImagem("Recursos/Imagens/muroM_vertical2.png",(32,32))
+    lista_objetos = [piso, parede, pilula, quina_noroeste, parede_norte1, parede_oeste1, 
+    parede_oeste2, parede_norte2, quina_nordeste, quina_sudoeste, quina_sudeste, parede_oeste3, 
+    parede_sul1, parede_sul2, parede_leste1, parede_leste2, portal_leste, portal_oeste, portal_sul, 
+    portal_norte, muroV, muroM, caldeirao, muroM1, muroM2, muroM3]
     return lista_imagem_jogador, lista_objetos, lista_imagem_sombras
+
+def carregaTelas(x: int = 800, y: int = 680):
+
+    telasIniciais = [carregaImagem("Recursos/Imagens/tela_inicial_base.png", (x, y)),
+    carregaImagem("Recursos/Imagens/tela_inicial_start.png", (x, y)), 
+    carregaImagem("Recursos/Imagens/tela_inicial_sobre.png", (x, y))]
+    telasVitoria = [carregaImagem("Recursos/Imagens/vitoria.png", (x, y)), 
+    carregaImagem("Recursos/Imagens/vitoria_jogar.png", (x, y)), 
+    carregaImagem("Recursos/Imagens/vitoria_menu.png", (x, y))]
+    telasDerrota = [carregaImagem("Recursos/Imagens/derrota.png", (x, y)), 
+    carregaImagem("Recursos/Imagens/derrota_jogar.png", (x, y)), 
+    carregaImagem("Recursos/Imagens/derrota_menu.png", (x, y))]
+
+    lista_telas = [telasIniciais, telasVitoria, telasDerrota]
+
+
+    return lista_telas
 
 def verificaTeclaPressionada(direcaoIntencao):
     """
@@ -386,25 +418,21 @@ def coletaPilula (direcaoAtual, xJogador, yJogador):
     MAPA[yDown+1][x] = 0 if direcaoAtual == "DOWN" and MAPA[yDown+1][x] == 2 else MAPA[yDown+1][x]
     MAPA[y][xRight+1] = 0 if direcaoAtual == "RIGHT" and MAPA[y][xRight+1] == 2 else MAPA[y][xRight+1]
 
-def contaPilula():
+def contaPilula(pilulasTotais):
     """
     Função responsável por contar as pílulas coletadas
 
+    Parâmetros:
+        pilulasTotais: Quantidade total de pílulas presentes no mapa;
     Retorno:
         pilulasColetadas: Quantidade de pílulas coletadas até o momento
     """
     pilulasRestantes = 0
-    pilulasTotais = 0
 
     for l in range(len(MAPA)):
         for c in range(len(MAPA[l])):
             if MAPA[l][c] == 2:
                 pilulasRestantes += 1
-
-    for l in range(len(MAPA_AUX)):
-        for c in range(len(MAPA_AUX[l])):
-            if MAPA_AUX[l][c] == 2:
-                pilulasTotais += 1
     
     pilulasColetadas = pilulasTotais - pilulasRestantes
                 
@@ -562,7 +590,7 @@ def limitaParedeSombra(i: int, direcaoAtualSombra: list, coordenadas_sombras: li
         
     return direcaoAtualSombra, coordenadas_sombras
 
-def checaGameOver(gameOver, xJogador, yJogador, coordenadas_sombras: list):
+def checaDerrota(gameOver, xJogador, yJogador, coordenadas_sombras: list):
     """
     """
     # Representação das extremidades da imagem do personagem:
@@ -592,18 +620,38 @@ def checaGameOver(gameOver, xJogador, yJogador, coordenadas_sombras: list):
 
     return gameOver
 
-def main():
-    """
-    Função responsável por unir as outras funções.
-    """
-    criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
+def checaVitoria(vitoria):
 
-    lista_imagem_jogador, lista_objetos, lista_imagem_sombras = carregaSprites(32)
+    pilulasRestantes = 0
+    for l in range(len(MAPA)):
+        for c in range(len(MAPA[l])):
+            if MAPA[l][c] == 2:
+                pilulasRestantes += 1
+    if pilulasRestantes == 0:
+        vitoria = True
+    
+    return vitoria
+
+def jogo(lista_imagem_jogador, lista_objetos, lista_imagem_sombras):
 
     # INFORMAÇÕES BASE
 
     # >>>> GERAL <<<<
-    gameOver = False
+    derrota = False
+    vitoria = False
+    pilulasTotais = 0
+    for l in range(len(MAPA_AUX)):
+        for c in range(len(MAPA_AUX[l])):
+            if MAPA_AUX[l][c] == 2:
+                pilulasTotais += 1
+
+    if MAPA != MAPA_AUX:
+        for l in range(len(MAPA)):
+            for c in range(len(MAPA[l])):
+                MAPA[l][c] = MAPA_AUX[l][c] if MAPA[l][c] != MAPA_AUX[l][c] else MAPA[l][c]
+                
+    # MAPA = MAPA_AUX if MAPA != MAPA_AUX else MAPA
+    # print(MAPA)
 
     # >>>> JOGADOR <<<<
     imagemJogador = lista_imagem_jogador[2]
@@ -621,7 +669,7 @@ def main():
     direcaoOposta = ["STILL", "STILL", "STILL"]
     imagemSombras = [lista_imagem_sombras[0][1], lista_imagem_sombras[1][1], lista_imagem_sombras[2][1]]  
 
-    while gameOver == False:
+    while derrota == False and vitoria == False:
     # while True:   
         if teclaPressionada(K_ESCAPE):
             break
@@ -668,7 +716,7 @@ def main():
 
         # Atualiza o mapa ao coletar as pílulas
         coletaPilula (direcaoAtual, xJogador, yJogador)
-        pilulasColetadas = contaPilula()
+        pilulasColetadas = contaPilula(pilulasTotais)
         # print(pilulasColetadas)
         
         yJogador, xJogador = portal (direcaoAtual, 32, yJogador, xJogador)
@@ -693,9 +741,91 @@ def main():
         #Atualiza os objetos na janela
         atualizaTelaJogo()
 
-        gameOver = checaGameOver(gameOver, xJogador, yJogador, coordenadas_sombras)
-        
+        derrota = checaDerrota(derrota, xJogador, yJogador, coordenadas_sombras)
+        vitoria = checaVitoria(vitoria)
+    
+    return vitoria, pilulasColetadas
+    
+def main():
+    """
+    Função responsável por unir as outras funções.
+    """
+    criaJanela(LARGURAJANELA, ALTURAJANELA, "Pac-Man", CORFUNDOJANELA, ICONE)
+    lista_telas = carregaTelas()
+    lista_imagem_jogador, lista_objetos, lista_imagem_sombras = carregaSprites(32)
+    tela = "menu"
 
+    while True:
+        if teclaPressionada(K_ESCAPE):
+            break
+        #Limpa a janela
+        limpaTela()
+
+        
+        while tela == "menu":
+            xCursor, yCursor = posicaoCursorMouse()
+
+            if (xCursor >= 240 and xCursor <= 560) and (yCursor >= 304 and yCursor <= 400):
+                desenhaImagem(lista_telas[0][1], 0, 0)
+                botao_pressionado = botaoMousePressionado()
+                if botao_pressionado[0] == True and botao_pressionado[1] == 1:
+                    tela = "jogar"
+                                     
+            elif (xCursor >= 240 and xCursor <= 560) and (yCursor >= 423 and yCursor <= 519):
+                desenhaImagem(lista_telas[0][2], 0, 0)
+            else:
+                desenhaImagem(lista_telas[0][0], 0, 0)
+
+            atualizaTelaJogo()
+        
+        while tela == "jogar":
+            vitoria, pontuacao = jogo(lista_imagem_jogador, lista_objetos, lista_imagem_sombras)
+            tela = "vitoria" if vitoria == True else "derrota"
+
+        while tela == "vitoria":
+
+            xCursor, yCursor = posicaoCursorMouse()
+
+            if vitoria == True:
+                desenhaImagem(lista_telas[1][0], 0, 0) # tela de vitoria
+                if (xCursor >= 480 and xCursor <= 660) and (yCursor >= 530 and yCursor <= 610):
+                    desenhaImagem(lista_telas[1][1], 0, 0) # (jogar novamente)
+                    botao_pressionado = botaoMousePressionado()
+                    if botao_pressionado[0] == True and botao_pressionado[1] == 1:
+                        tela = "jogar"
+                elif (xCursor >= 160 and xCursor <= 340) and (yCursor >= 530 and yCursor <= 610):
+                    desenhaImagem(lista_telas[1][2], 0, 0) # (voltar ao menu)
+                    botao_pressionado = botaoMousePressionado()
+                    if botao_pressionado[0] == True and botao_pressionado[1] == 1:
+                        tela = "menu"
+                else:
+                    desenhaImagem(lista_telas[1][0], 0, 0) #tela derrota (base) 
+                        # print("ola")
+            atualizaTelaJogo()
+
+        while tela == "derrota":
+            xCursor, yCursor = posicaoCursorMouse()
+
+            if (xCursor >= 480 and xCursor <= 660) and (yCursor >= 530 and yCursor <= 610):
+                desenhaImagem(lista_telas[2][1], 0, 0) # (jogar novamente)
+                botao_pressionado = botaoMousePressionado()
+                if botao_pressionado[0] == True and botao_pressionado[1] == 1:
+                        tela = "jogar"
+            elif (xCursor >= 160 and xCursor <= 340) and (yCursor >= 530 and yCursor <= 610):
+                desenhaImagem(lista_telas[2][2], 0, 0) # (voltar ao menu)
+                botao_pressionado = botaoMousePressionado()
+                if botao_pressionado[0] == True and botao_pressionado[1] == 1:
+                        tela = "menu"
+            else:
+                desenhaImagem(lista_telas[2][0], 0, 0) #tela derrota (base) 
+                        # print("ola")
+            desenhaTexto(str(pontuacao), 470, 50, 45, "black")
+
+            atualizaTelaJogo()
+
+
+        #Atualiza os objetos na janela
+        atualizaTelaJogo()
         
     finalizaJogo()
 
